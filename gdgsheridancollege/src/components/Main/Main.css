@@ -41,6 +41,7 @@ div.main > div{
     width: 80%;
 }
 div.main > div> h1{
+    text-align: left;
     font-size: 6rem;
     text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
 }

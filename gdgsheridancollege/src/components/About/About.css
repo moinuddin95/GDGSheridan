@@ -1,0 +1,23 @@
+#About{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem;
+    background-color: #8A8B50;
+    height: 100vh;
+}
+#About h1{
+    padding-top:3rem;
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+    text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
+}
+#About h3{
+    margin-top:10rem;
+    text-align: center;
+
+    color: white;
+    font-size: 2rem;
+    width:90rem;
+}
