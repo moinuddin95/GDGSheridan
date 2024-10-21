@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 :root{
-    font-family: 'JetBrains Mono', monospace;
     font-size:62.5%;
 }
 *{
+    font-family: 'JetBrains Mono', monospace;  
+    font-weight: lighter; 
     font-size: 1.6rem;
     margin: 0px;
     padding: 0px;

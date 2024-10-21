@@ -1,0 +1,43 @@
+main{
+    margin: 0rem;
+    background-color: #50798B;
+    height: 100vh;
+}
+div.main{
+    display: grid;
+    grid-template-columns: 63% 36%;
+    margin: 0rem 15rem 0rem 15rem;
+    padding-top: 3rem;
+}
+div.main > img{
+    width:46.8rem;
+    height: 33.9rem;
+    object-fit: cover;
+    margin-top: 5rem;
+}
+div.main > div{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: 28rem 17rem 15rem;
+    color: white;
+    text-align: left;
+    width: 80%;
+}
+div.main > div> h1{
+    font-size: 6rem;
+    text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
+}
+div.main > div> h3{
+    font-size: 2rem;
+}
+div.main > div> button{
+    background-color: white;
+    width: 42.5rem;
+    align-self: left;
+    color: #50798B;
+    border:none;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    height: 10rem;
+}
