@@ -1,0 +1,51 @@
+#Events{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0rem;
+    background-color: #518B50;
+    height: 100vh;
+}
+#Events h1{
+    align-self: center;
+    padding-top:3rem;
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+    text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
+}
+#Events div{
+    margin-left: 10%;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+#Events div a{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin:0rem 3rem;
+    place-items: center;
+}
+#Events div a img{
+    grid-area:1/1;
+    width: auto;
+    height: auto;
+}
+#Events div a h2{
+    grid-area:1/1;
+    transform:translate(-3rem, -10rem);
+    color: black;
+    font-size: 4rem;
+}
+#Events div a h3{
+    grid-area:1/1;
+    transform:translate(-1.8rem, -4rem);
+    color: black;
+    font-size: 2rem;
+}
