@@ -9,11 +9,28 @@ div.main{
     margin: 0rem 15rem 0rem 15rem;
     padding-top: 3rem;
 }
-div.main > img{
+div.main > div:last-child{
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+div.main > div > img{
     width:46.8rem;
     height: 33.9rem;
     object-fit: cover;
     margin-top: 5rem;
+}
+div.main > div > div {
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    width: 30rem;
+    flex-direction: row;
+    justify-content:space-around;
+}
+div.main > div > div > a > img{
+    width: auto;
+    height: 4rem;
+    cursor: pointer;
 }
 div.main > div{
     margin-top: 1rem;

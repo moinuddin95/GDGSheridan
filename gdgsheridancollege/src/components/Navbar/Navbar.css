@@ -24,10 +24,10 @@ nav div a{
 }
 nav div a button{
     height: 5rem;
-    width: 15rem;
+    width: 12rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-evenly;
     align-items: center;
     background: #50798B;
     color: black;
@@ -42,9 +42,8 @@ nav div a button span{
     font-size: 2rem;
 }
 nav div a button img{
-    width: 1.2rem;
-    height: 1.2rem;
-    align-self:start;
+    width: 2rem;
+    height: auto;
 }
 nav img {
     width: 7.6rem;
