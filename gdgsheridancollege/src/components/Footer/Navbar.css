@@ -1,17 +1,10 @@
 header{
-    position: fixed;
-    z-index: 10;
-    transform: translateY(0);
-    transition: transform 500ms ease;
     background: #313537;
     color: white;
     padding: 1rem 0rem;
     text-align: center;
     width: 100%;
     margin:0rem;
-}
-.show{
-    transform: translateY(-100%);
 }
 nav{
     display:flex;

@@ -1,29 +1,24 @@
 import "./Events.css";
+import events from "../../model/events.json";
 import template from "../../assets/template.png";
+
+function returnEvents() {
+  return events.map((event) => {
+    return (
+      <a>
+        <img src={template} />
+        <h2>{event.name}</h2>
+        <h3>{event.date}</h3>
+      </a>
+    );
+  });
+}
 
 function Events() {
   return (
     <section id="Events">
       <h1>Events</h1>
-      <div>
-        <a>
-          <img src={template} />
-          <h2>Devfest</h2>
-          <h3>November 1, 2024</h3>
-        </a>
-        <a>
-          <img src={template} />
-        </a>
-        <a>
-          <img src={template} />
-        </a>
-        <a>
-          <img src={template} />
-        </a>
-        <a>
-          <img src={template} />
-        </a>
-      </div>
+      <div>{returnEvents()}</div>
     </section>
   );
 }

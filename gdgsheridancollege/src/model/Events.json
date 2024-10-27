@@ -1,0 +1,22 @@
+[
+    {
+        "name": "DevFest",
+        "date": "November 1, 2023"
+    },
+    {
+        "name": "Hackathon",
+        "date": "November 15, 2023"
+    },
+    {
+        "name": "Workshop",
+        "date": "December 1, 2023"
+    },
+    {
+        "name": "Meetup",
+        "date": "December 15, 2023"
+    },
+    {
+        "name": "Conference",
+        "date": "January 1, 2024"
+    }
+]
