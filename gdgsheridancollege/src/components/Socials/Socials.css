@@ -1,0 +1,13 @@
+.socials > a > img{
+    width: auto;
+    height: 4rem;
+    cursor: pointer;
+}
+.socials {
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    width: 30rem;
+    flex-direction: row;
+    justify-content:space-around;
+}

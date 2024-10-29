@@ -3,6 +3,7 @@ import Main from "./components/Main/Main";
 import './App.css';
 import About from "./components/About/About";
 import Events from "./components/Events/Events";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div>
@@ -10,6 +11,7 @@ function App() {
       <Main />
       <About />
       <Events />
+      <Footer />
     </div>
   );
 }

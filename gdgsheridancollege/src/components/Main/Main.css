@@ -20,19 +20,6 @@ div.main > div > img{
     object-fit: cover;
     margin-top: 5rem;
 }
-div.main > div > div {
-    justify-self: center;
-    align-self: center;
-    display: flex;
-    width: 30rem;
-    flex-direction: row;
-    justify-content:space-around;
-}
-div.main > div > div > a > img{
-    width: auto;
-    height: 4rem;
-    cursor: pointer;
-}
 div.main > div{
     margin-top: 1rem;
     display: grid;

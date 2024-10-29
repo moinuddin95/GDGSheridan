@@ -1,4 +1,4 @@
-header{
+/* header{
     background: #313537;
     color: white;
     padding: 1rem 0rem;
@@ -50,4 +50,22 @@ nav img {
     height: 3.8rem;
     align-self: center;
     flex-shrink: 0;
+} */
+
+
+footer nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    padding: 1rem 15rem 1rem 15rem;
+    background: #313537;
+    color: white;
+}
+footer .socials{
+    width: 15rem;
+}
+footer .socials a img{
+    width: 3rem;
+    height: auto;
 }
