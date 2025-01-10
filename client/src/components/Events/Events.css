@@ -1,0 +1,51 @@
+#Events{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-color: #518B50;
+    height: 100vh;
+}
+#Events h1{
+    align-self: center;
+    color: white;
+    font-size: 6rem;
+    text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
+}
+#Events > div{
+    margin-left: 10%;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+.eventCard{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
+    margin: 0rem 5rem;
+    width: 33rem;
+    height: 52rem;
+    display: grid;
+    grid-template-columns: repeat(10, 3.3rem);
+    grid-template-rows: repeat(20, 2.6rem);
+    text-align: center;
+}
+.eventCard > h2{
+    grid-area:7/3;
+    color: black;
+    font-size: 4rem;
+    
+}
+.eventCard > h3{
+    grid-area:10/3/12/10;
+    color: black;
+    font-size: 2rem;
+    text-align: left;
+}
