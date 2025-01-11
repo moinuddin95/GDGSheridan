@@ -8,6 +8,9 @@
     background-color: #518B50;
     height: 100vh;
 }
+a{
+    text-decoration: none;
+}
 #Events h1{
     align-self: center;
     color: white;
@@ -38,12 +41,14 @@
     text-align: center;
 }
 .eventCard > h2{
-    grid-area:7/3;
+    grid-area:7/3/9/10;
     color: black;
     font-size: 4rem;
+    text-align: left;
     
 }
 .eventCard > h3{
+    font-style: normal;
     grid-area:10/3/12/10;
     color: black;
     font-size: 2rem;
