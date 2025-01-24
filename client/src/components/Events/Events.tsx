@@ -1,6 +1,7 @@
 import "./Events.css";
 import template from "../../assets/template.png";
 import { useState, useEffect } from "react";
+import axios from 'axios';
 
 interface EventsInterface {
   name: string;
@@ -12,10 +13,9 @@ function Events() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const eventsFetch = await fetch("/data");
-        // console.log("eventsFetch = " + eventsFetch.);
-        const response = (await eventsFetch.json()) as EventsInterface[];
-        setEvents(response);
+        const response = await axios.get('/api/events');
+        console.log(response.data);
+        setEvents(response.data);
       } catch (err) {
         console.log("Here is the error: " + err);
       }
@@ -28,7 +28,7 @@ function Events() {
       <div>
         {events.map((event) => {
           return (
-            <a href="" key={event.name}>
+            <a href="#" key={event.name}>
               <div
                 className="eventCard"
                 style={{ backgroundImage: `url(${template})` }}

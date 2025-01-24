@@ -1,0 +1,71 @@
+.EventsForm {
+    background-color: #50798B;
+    padding-top: 15rem;
+    height: 74vh;
+    width: 100%;
+}
+.EventsForm > h1 {
+    color: white;
+    text-align: center;
+    margin: 2rem 0rem;
+    font-size: 4rem;
+    font-weight: 100;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+form > div{
+    display: block;
+}
+form > div > label{
+    font-size: 2rem;
+    margin: 0rem 3rem;
+}
+form > div > input{
+    border-radius: 0.5rem;
+    border: none;
+    width: 30rem;
+    height: 3rem;
+    padding-left: 1rem;
+}
+form > div > textarea{
+    border-radius: 0.5rem;
+    border: none;
+}
+.time{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.time > div{
+    margin: 0rem 3rem;
+}
+.time > div > label{
+    margin: 0rem 2rem;
+}
+.time > div > input{
+    border-radius: 0.5rem;
+    border: none;
+    width: 12rem;
+    height: 3rem;
+    padding-left: 1rem;
+}
+.description{
+    display: flex;
+}
+form > button{
+    background-color: white;
+    width: 20rem;
+    align-self: center;
+    color: #50798B;
+    border:none;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    height: 5rem;
+    justify-self: center;
+}

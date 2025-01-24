@@ -1,18 +1,17 @@
-import Navbar from "./components/Navbar/Navbar";
-import Main from "./components/Main/Main";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
 import './App.css';
-import About from "./components/About/About";
-import Events from "./components/Events/Events";
-import Footer from "./components/Footer/Footer";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
-      <Main />
-      <About />
-      <Events />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />  
+      </Routes>
+    </Router>
   );
 }
 
