@@ -27,7 +27,8 @@ const Navbar = () => {
   return (
     <header className={`${visibility ? "show" : ""}`}>
       <nav>
-        <img src={logo} alt="logo" />
+        
+        <a href="/"><img src={logo} alt="logo" /></a>
         <div>
           <button onClick={() => handleScrollToComponent("About")}>
             <span>About</span> 

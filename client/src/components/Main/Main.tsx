@@ -6,6 +6,9 @@ import instagram from "../../assets/instagram.png";
 import Socials from "../Socials/Socials";
 
 export default function Main() {
+  const handleScrollToComponent = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <main>
       <div className="main">
@@ -16,7 +19,7 @@ export default function Main() {
             university students to learn web, mobile, and google technologies in
             a peer-to-peer learning environment.
           </h3>
-          <button>Check out our Events!</button>
+          <button onClick={() => handleScrollToComponent('Events')}>Check out our Events!</button>
         </div>
 
         <div>

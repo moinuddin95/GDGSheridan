@@ -1,5 +1,5 @@
 import "./EventsForm.css";
-
+import discord from "../../assets/discord.png";
 function EventsForm() {
     return (
         <div className="EventsForm">
@@ -41,6 +41,11 @@ function EventsForm() {
                     <textarea
                         id="event-description"
                     ></textarea>
+                </div>
+
+                <div className="thumbnail">
+                    <label htmlFor="event-thumbnail">Event Thumbnail</label>
+                    <input type="file" id="event-thumbnail" accept="image/*" />
                 </div>
                 <button type="submit">Submit</button>
             </form>
