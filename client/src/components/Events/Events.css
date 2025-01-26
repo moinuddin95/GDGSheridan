@@ -7,6 +7,7 @@
     padding-bottom: 5rem;
     background-color: #518B50;
     height: 100vh;
+    position: relative;
 }
 a{
     text-decoration: none;

@@ -6,6 +6,7 @@ footer nav{
     padding: 1rem 15rem 1rem 15rem;
     background: #313537;
     color: white;
+    position: relative;
 }
 footer .socials{
     width: 15rem;

@@ -14,6 +14,16 @@ function About() {
         like-minded individuals, learn from industry professionals, and take
         part in hands-on coding initiatives.
       </h3>
+      <div className="book">
+        <span className="page turn"></span>
+        <span className="page turn"></span>
+        <span className="page turn"></span>
+        <span className="page turn"></span>
+        <span className="page turn"></span>
+        <span className="cover"></span>
+        <span className="page"></span>
+        <span className="cover turn"></span>
+      </div>
     </section>
   );
 }
