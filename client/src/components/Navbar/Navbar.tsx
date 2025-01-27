@@ -2,11 +2,14 @@ import "./Navbar.css";
 import redirect from "../../assets/redirect.png";
 import logo from "../../assets/logo.png";
 import { useState, useEffect } from "react";
+import { handleScrollToComponent } from "../../utils/scrollUtils";
 const Navbar = () => {
   const [visibility, setVisibility] = useState(false);
   const [scroll, setScroll] = useState(0);
 
   const handleScroll = () => {
+    //if you scroll down, scrollY will be greater than the previous scrollY
+    //if you scroll up, scrollY will be less than the previous scrollY
     if (window.scrollY > scroll) {
       setVisibility(true);
     } else {
@@ -19,10 +22,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
-
-  const handleScrollToComponent = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <header className={`${visibility ? "show" : ""}`}>

@@ -4,11 +4,9 @@ import discord from "../../assets/discord.png";
 import linkedin from "../../assets/linkedin.png";
 import instagram from "../../assets/instagram.png";
 import Socials from "../Socials/Socials";
+import { handleScrollToComponent } from "../../utils/scrollUtils";
 
 export default function Main() {
-  const handleScrollToComponent = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <main>
       <div className="main">

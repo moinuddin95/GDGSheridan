@@ -10,7 +10,6 @@ app.get('/',(req, res) => {
 app.get('/events', (req, res) => {
     let data = fs.readFileSync('./model/Events.json', {encoding: 'utf-8'});
     res.json(JSON.parse(data));
-    // res.send("Hello");
 });
 
 app.listen(5000, () => {

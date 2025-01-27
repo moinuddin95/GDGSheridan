@@ -1,6 +1,20 @@
 import "./About.css";
-
+import { useState, useEffect, useRef } from "react";
 function About() {
+  const [animate, setAnimate] = useState(false);
+  const bookRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleScrollForAnimation = () => {
+      if(bookRef.current)
+        if(window.scrollY > bookRef.current.getBoundingClientRect().top)
+          bookRef.current.classList.add('turn');
+    };
+    window.addEventListener('scroll', handleScrollForAnimation);
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollForAnimation);
+    };
+  }, []);
   return (
     <section id="About">
       <h1>About</h1>
@@ -14,15 +28,15 @@ function About() {
         like-minded individuals, learn from industry professionals, and take
         part in hands-on coding initiatives.
       </h3>
-      <div className="book">
-        <span className="page turn"></span>
-        <span className="page turn"></span>
-        <span className="page turn"></span>
-        <span className="page turn"></span>
-        <span className="page turn"></span>
+      <div className="book" ref={bookRef}>
+        <span className="page"></span>
+        <span className="page"></span>
+        <span className="page"></span>
+        <span className="page"></span>
+        <span className="page"></span>
         <span className="cover"></span>
         <span className="page"></span>
-        <span className="cover turn"></span>
+        <span className="cover"></span>
       </div>
     </section>
   );
