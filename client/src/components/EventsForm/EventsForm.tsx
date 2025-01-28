@@ -4,7 +4,7 @@ function EventsForm() {
     return (
         <div className="EventsForm">
             <h1>Events Form</h1>
-            <form>
+            <form action='/api/submitEvent'>
                 <div>
                     <label htmlFor="event-name">Event Name</label>
                     <input
