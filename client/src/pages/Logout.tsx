@@ -19,6 +19,8 @@ function Logout(){
         fetchUser().then((res) => (output = res));
         return output;
       };
+    if(!handleLogout())
+      console.error("Can not logg out");
     return ( 
         <Dashboard />
     )
