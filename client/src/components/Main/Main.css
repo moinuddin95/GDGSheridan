@@ -1,43 +1,43 @@
 main{
     position: relative;
-    padding-top: 10rem;
-    margin: 0rem;
+    padding: 8vw 5vw 0vw 10vw;
     background-color: #50798B;
     height: 100vh;
+    display: flex;
+    margin: 0px;
 }
-div.main{
-    display: grid;
-    grid-template-columns: 63% 36%;
-    margin: 0rem 15rem 0rem 15rem;
-    padding-top: 3rem;
+    
+#main-animation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    justify-content: space-between;
+    height: 65vh;
 }
-div.main > div:last-child{
-    display: grid;
-    grid-template-rows: 60% 40%;
-}
-div.main > div > img{
+#main-animation > img{
     width:46.8rem;
     height: 33.9rem;
     object-fit: cover;
     margin-top: 5rem;
 }
-div.main > div{
-    margin-top: 1rem;
-    display: grid;
-    grid-template-rows: 28rem 17rem 15rem;
+#main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     color: white;
     text-align: left;
     width: 80%;
 }
-div.main > div> h1{
+#main-content > h1{
     text-align: left;
     font-size: 6rem;
     text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
 }
-div.main > div> h3{
+#main-content > h3{
     font-size: 2rem;
 }
-div.main > div> button{
+#main-content > button{
     background-color: white;
     width: 42.5rem;
     align-self: left;
@@ -47,4 +47,23 @@ div.main > div> button{
     font-size: 2.5rem;
     cursor: pointer;
     height: 10rem;
+}
+@media (max-width: 720px){
+    main{
+        flex-wrap:wrap;
+        height: max-content;
+        justify-content: center;
+        padding: 5vh;
+    }
+    main > div{
+        margin-top: 5vh;
+    }
+    #main-animation{
+        margin-bottom: 5vh;
+    }
+    #main-content {
+        h1, h3, button {
+            margin-top: 5vh;
+        }
+    }
 }

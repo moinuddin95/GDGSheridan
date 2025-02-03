@@ -5,7 +5,6 @@
 }
 .socials {
     justify-self: center;
-    align-self: center;
     display: flex;
     width: 30rem;
     flex-direction: row;

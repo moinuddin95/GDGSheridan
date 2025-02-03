@@ -9,8 +9,7 @@ import { handleScrollToComponent } from "../../utils/scrollUtils";
 export default function Main() {
   return (
     <main>
-      <div className="main">
-        <div>
+        <div id="main-content">
           <h1>Google Developers Group: Sheridan College</h1>
           <h3>
             Google Developer Group (GDG) is a Google Developers program for
@@ -20,11 +19,10 @@ export default function Main() {
           <button onClick={() => handleScrollToComponent('Events')}>Check out our Events!</button>
         </div>
 
-        <div>
+        <div id="main-animation">
           <img src={homeanimation} alt="animatoin" />
           <Socials />
         </div>
-      </div>
     </main>
   );
 }

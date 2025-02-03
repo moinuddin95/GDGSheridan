@@ -14,7 +14,7 @@ const app = express();
 app.use(
   session({
     secret: "secret",
-    resave: "false",
+    resave: false,
     saveUninitialized: true,
   })
 );
@@ -38,9 +38,6 @@ passport.deserializeUser((user, done) => done(null, user));
 //body parsing json
 
 app.use(bodyParser.json());
-app.get("/", (req, res) => {
-  res.redirect("/data");
-});
 
 app.get(
   "/auth/google",
@@ -49,16 +46,29 @@ app.get(
   })
 );
 
+app.get("/auth/google/logout", (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/auth/google");
+  });
+});
+
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }), 
+  passport.authenticate("google", { failureRedirect: "/error" }), 
   (req, res) => {
-    res.redirect("/dashboard");
+    res.redirect("http://localhost:3000/dashboard");
   }
 );
 
-app.get("/dashboard", (req, res) => {
-  res.send("Welcome user: " + req.user?.displayName);
+app.get('/auth/google/user', (req, res) => {
+  res.json(req.user || null);
+})
+
+app.get('/error', (req, res) => {
+  res.status(500).send("Error occured");
 })
 
 app.get("/events", (req, res) => {
