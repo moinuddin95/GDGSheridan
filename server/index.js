@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import passport from "passport";
 import session from "express-session";
-import { Strategy } from "passport-google-oauth20";
+import { Strategy } from "passport-azure-ad-oauth2";
 
 dotenv.config();
 
@@ -26,10 +26,25 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL: process.env.REDIRECT_URI,
+      tenant: process.env.TENANT_ID,
+      authorizationURL: `https://login.microsoftonline.com/${process.env.TENANT_ID}/oauth2/v2.0/authorize`,
+      tokenURL: `https://login.microsoftonline.com/${process.env.TENANT_ID}/oauth2/v2.0/token`,
     },
-    (accessToken, refreshToken, profile, done) => {
-      return done(null, profile);
+    async (accessToken, refreshToken, params, profile, done) => {
+      try {
+        const response = await fetch("https://graph.microsoft.com/v1.0/me", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        const data = await response.json();
+        console.log(data);
+        return done(null, data);
+      } catch (err) {
+        console.log(err);
+        return done(err);
+      }
     }
   )
 );
@@ -40,36 +55,52 @@ passport.deserializeUser((user, done) => done(null, user));
 app.use(bodyParser.json());
 
 app.get(
-  "/auth/google",
-  passport.authenticate("google", {
-    scope: ["profile", "email"],
+  "/auth/login",
+  passport.authenticate("azure_ad_oauth2", {
+    scope: [
+      "openid",
+      "profile",
+      "email",
+      "offline_access",
+      "User.Read",
+      "User.ReadBasic.All",
+    ],
   })
 );
 
-app.get("/auth/google/logout", (req, res) => {
-  req.logout((err) => {
-    if (err) {
-      return next(err);
-    }
-    res.redirect("/auth/google");
+const authenticateUser = (req, res, next) => {
+  console.log(req.user.mail);
+  if (process.env.ALLOWED_EMAILS.split(",").includes(req.user.mail)) {
+    next();
+  } else {
+    res.status(403).send("access-denied" + req.user.mail);
+  }
+};
+
+app.get("/auth/logout", (req, res) => {
+  req.logout(() => {
+    res.redirect("/auth/login");
   });
 });
 
 app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/error" }), 
+  "/auth/callback",
+  passport.authenticate("azure_ad_oauth2", {
+    failureRedirect: "/error",
+  }),
+  authenticateUser,
   (req, res) => {
     res.redirect("http://localhost:3000/dashboard");
   }
 );
 
-app.get('/auth/google/user', (req, res) => {
+app.get("/auth/user", (req, res) => {
   res.json(req.user || null);
-})
+});
 
-app.get('/error', (req, res) => {
+app.get("/error", (req, res) => {
   res.status(500).send("Error occured");
-})
+});
 
 app.get("/events", (req, res) => {
   let data = fs.readFileSync("./model/Events.json", { encoding: "utf-8" });
@@ -77,15 +108,22 @@ app.get("/events", (req, res) => {
 });
 
 app.post("/submitEvent", (req, res) => {
-  //   const Event = {
-  //     eventName: req.body.eventName,
-  //     eventDate: req.body.eventDate,
-  //     eventTimeFrom: req.body.eventTimeFrom,
-  //     eventTimeTo: req.body.eventTimeTo,
-  //     eventLocation: req.body.eventLocation,
-  //     eventDescription: req.body.eventDescription,
-  //     eventThumbnail: req.body.eventThumbnail,
-  //   };
+  const Event = {
+    executiveName: req.body.executiveName,
+    eventName: req.body.eventName,
+    eventDate: req.body.eventDate,
+    eventTimeFrom: req.body.eventTimeFrom,
+    eventTimeTo: req.body.eventTimeTo,
+    eventLocation: req.body.eventLocation,
+    eventDescription: req.body.eventDescription,
+    eventThumbnail: req.body.eventThumbnail,
+  };
+  let events = JSON.parse(
+    fs.readFileSync("./model/Events.json", { encoding: "utf-8" })
+  );
+  events.push(Event);
+  fs.writeFileSync("./model/Events.json", JSON.stringify(events, null, 2));
+  res.status(201).send("Event added successfully");
 });
 
 app.listen(5000, () => {

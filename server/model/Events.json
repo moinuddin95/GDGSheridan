@@ -1,22 +1,102 @@
 [
-    {
-        "name": "Hackville",
-        "date": "November 1, 2023"
-    },
-    {
-        "name": "Hackathon",
-        "date": "November 15, 2023"
-    },
-    {
-        "name": "Workshop",
-        "date": "December 1, 2023"
-    },
-    {
-        "name": "Meetup",
-        "date": "December 15, 2023"
-    },
-    {
-        "name": "Conference",
-        "date": "January 1, 2024"
-    }
+  {
+    "executiveName": "Moinuddin Shaikh",
+    "eventName": "Hackville",
+    "eventDate": "2023-11-01",
+    "eventTimeFrom": "09:00",
+    "eventTimeTo": "17:00",
+    "eventLocation": "Main Hall",
+    "eventDescription": "Annual hackathon event.",
+    "eventThumbnail": "C:\\fakepath\\Hackville.jpg"
+  },
+  {
+    "executiveName": "Connor Uhrig",
+    "eventName": "Tech Conference",
+    "eventDate": "2023-11-15",
+    "eventTimeFrom": "10:00",
+    "eventTimeTo": "16:00",
+    "eventLocation": "Conference Center",
+    "eventDescription": "Conference on the latest in technology.",
+    "eventThumbnail": "C:\\fakepath\\TechConference.jpg"
+  },
+  {
+    "executiveName": "Moinuddin Shaikh",
+    "eventName": "Workshop",
+    "eventDate": "2023-12-01",
+    "eventTimeFrom": "13:00",
+    "eventTimeTo": "15:00",
+    "eventLocation": "Room 101",
+    "eventDescription": "Hands-on workshop on web development.",
+    "eventThumbnail": "C:\\fakepath\\Workshop.jpg"
+  },
+  {
+    "executiveName": "Connor Uhrig",
+    "eventName": "Meetup",
+    "eventDate": "2023-12-15",
+    "eventTimeFrom": "18:00",
+    "eventTimeTo": "20:00",
+    "eventLocation": "Community Center",
+    "eventDescription": "Networking meetup for tech enthusiasts.",
+    "eventThumbnail": "C:\\fakepath\\Meetup.jpg"
+  },
+  {
+    "executiveName": "Moinuddin Shaikh",
+    "eventName": "Conference",
+    "eventDate": "2024-01-01",
+    "eventTimeFrom": "09:00",
+    "eventTimeTo": "17:00",
+    "eventLocation": "Convention Center",
+    "eventDescription": "New Year tech conference.",
+    "eventThumbnail": "C:\\fakepath\\Conference.jpg"
+  },
+  {
+    "executiveName": "Moinuddin Shaikh",
+    "eventName": "Hackathon",
+    "eventDate": "2025-02-06",
+    "eventTimeFrom": "12:13",
+    "eventTimeTo": "12:14",
+    "eventLocation": "Trafalgar",
+    "eventDescription": "testing #3",
+    "eventThumbnail": "C:\\fakepath\\StudentID.jpg"
+  },
+  {
+    "executiveName": "Connor Uhrig",
+    "eventName": "AI Workshop",
+    "eventDate": "2025-03-10",
+    "eventTimeFrom": "10:00",
+    "eventTimeTo": "12:00",
+    "eventLocation": "Lab 202",
+    "eventDescription": "Workshop on AI and machine learning.",
+    "eventThumbnail": "C:\\fakepath\\AIWorkshop.jpg"
+  },
+  {
+    "executiveName": "Moinuddin Shaikh",
+    "eventName": "Networking Event",
+    "eventDate": "2025-04-20",
+    "eventTimeFrom": "18:00",
+    "eventTimeTo": "21:00",
+    "eventLocation": "City Hall",
+    "eventDescription": "Networking event for professionals.",
+    "eventThumbnail": "C:\\fakepath\\NetworkingEvent.jpg"
+  },
+  {
+    "executiveName": "Connor Uhrig",
+    "eventName": "Startup Pitch",
+    "eventDate": "2025-05-25",
+    "eventTimeFrom": "14:00",
+    "eventTimeTo": "17:00",
+    "eventLocation": "Innovation Hub",
+    "eventDescription": "Pitch event for startups.",
+    "eventThumbnail": "C:\\fakepath\\StartupPitch.jpg"
+  },
+  {
+    "executiveName": "Moinuddin Shaikh",
+    "eventName": "Coding Bootcamp",
+    "eventDate": "2025-06-30",
+    "eventTimeFrom": "08:00",
+    "eventTimeTo": "16:00",
+    "eventLocation": "Tech Academy",
+    "eventDescription": "Intensive coding bootcamp for beginners.",
+    "eventThumbnail": "C:\\fakepath\\CodingBootcamp.jpg"
+  }
 ]

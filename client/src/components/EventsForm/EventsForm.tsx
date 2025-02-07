@@ -1,9 +1,11 @@
 import "./EventsForm.css";
 import { useState, useEffect, ChangeEvent } from "react";
 
-function EventsForm() {
-  const [displayName, setDisplayName] = useState(null);
+interface EventsFormProps {
+  displayName: string;
+}
 
+function EventsForm({ displayName }: EventsFormProps) {
   const [formInput, setFormInput] = useState({
     eventName: "",
     eventDate: "",
@@ -14,31 +16,32 @@ function EventsForm() {
     eventThumbnail: null,
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setFormInput((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const user = await fetch("/api/auth/google/user", {
-        credentials: "include",
-      });
-      const response = await user.json();
-      setDisplayName(response.displayName);
-    };
-    fetchUser()
-  }, []);
-
-  const handleSubmit = () => {};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    fetch("/api/submitEvent", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...formInput, executiveName: displayName})
+    })
+      .then((res) => console.log(res.status))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="EventsForm">
       <h1>Welcome {displayName}</h1>
-      <h1>Events Form</h1>
-      <form action="/api/submitEvent">
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="event-name">Event Name</label>
           <input
@@ -73,7 +76,7 @@ function EventsForm() {
             <input
               type="time"
               id="event-time-to"
-              name="eventNameTo"
+              name="eventTimeTo"
               onChange={handleChange}
             />
           </div>
@@ -89,13 +92,16 @@ function EventsForm() {
           />
         </div>
 
-        {/* <div className="description">
-                    <label htmlFor="event-description">Event Description</label>
-                    <textarea
-                        id="event-description"
-                        onChange={handleChange}
-                    ></textarea>
-                </div> */}
+        <div className="description">
+          <label htmlFor="event-description">Event Description</label>
+          <textarea
+            id="event-description"
+            name="eventDescription"
+            rows={3}
+            cols={40}
+            onChange={handleChange}
+          ></textarea>
+        </div>
 
         <div className="thumbnail">
           <label htmlFor="event-thumbnail">Event Thumbnail</label>
@@ -107,7 +113,7 @@ function EventsForm() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit">
           Submit
         </button>
       </form>

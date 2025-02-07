@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 
 interface EventsInterface {
-  name: string;
-  date: string;
+  eventName: string;
+  eventDate: string;
 }
 
 function Events() {
@@ -17,7 +17,7 @@ function Events() {
         console.log(response.data);
         setEvents(response.data);
       } catch (err) {
-        console.log("Here is the error: " + err);
+        console.log("Error while requesting events: " + err);
       }
     };
     fetchEvents();
@@ -28,13 +28,13 @@ function Events() {
       <div>
         {events.map((event) => {
           return (
-            <a href="#" key={event.name}>
+            <a href="#" key={event.eventName}>
               <div
                 className="eventCard"
                 style={{ backgroundImage: `url(${template})` }}
               >
-                <h2>{event.name}</h2>
-                <h3>{event.date}</h3>
+                <h2>{event.eventName}</h2>
+                <h3>{event.eventDate}</h3>
               </div>
             </a>
           );

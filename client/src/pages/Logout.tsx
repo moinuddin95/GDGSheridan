@@ -5,7 +5,7 @@ function Logout(){
     const handleLogout = (): boolean => {
         const fetchUser = async () => {
           let output = false;
-          const response = fetch("/api/auth/google/logout")
+          const response = fetch("/api/auth/logout")
             .then((res) => {
               if (res.status != 200) {
                 console.error("error inside");
