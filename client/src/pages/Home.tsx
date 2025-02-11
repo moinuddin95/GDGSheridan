@@ -9,6 +9,5 @@ export default function Home(){
         <Main />
         <About />
         <Events />
-        <Footer />
     </>);
 }

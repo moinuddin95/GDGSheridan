@@ -3,15 +3,14 @@ import EventsForm from "../components/EventsForm/EventsForm";
 import { useState, useEffect } from "react";
 
 export default function Dashboard() {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
   useEffect(() => {
     fetch("/api/auth/user", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data?.displayName || '');
+        setUser(data?.displayName || "");
         console.log(data);
-        if(data == null)
-              window.location.href = '/api/auth/login';
+        if (data == null) window.location.href = "/api/auth/login";
       });
   }, []);
   const handleLogin = () => {
@@ -20,10 +19,7 @@ export default function Dashboard() {
   return (
     <>
       {user ? (
-        <>
-          <EventsForm displayName={user}/>
-          <Footer />
-        </>
+        <EventsForm displayName={user} />
       ) : (
         <button onClick={handleLogin}>Login with google</button>
       )}

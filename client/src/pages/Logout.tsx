@@ -1,5 +1,4 @@
 import Dashboard from "./Dashboard";
-import Footer from './'
 
 function Logout(){
     const handleLogout = (): boolean => {

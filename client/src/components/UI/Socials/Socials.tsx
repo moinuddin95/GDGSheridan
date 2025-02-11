@@ -1,8 +1,8 @@
 import './Socials.css';
 
-import discord from "../../assets/discord.png";
-import linkedin from "../../assets/linkedin.png";
-import instagram from "../../assets/instagram.png";
+import discord from "../../../assets/discord.png";
+import linkedin from "../../../assets/linkedin.png";
+import instagram from "../../../assets/instagram.png";
 
 function Socials() {
   return (

@@ -1,5 +1,6 @@
 footer nav{
     display: flex;
+    height: 5rem;
     flex-direction: row;
     align-items: center;
     justify-content:space-between;

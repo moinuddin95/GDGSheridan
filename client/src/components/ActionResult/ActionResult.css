@@ -1,0 +1,23 @@
+.action-result{
+    height: 90.5vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.action-result h1{
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.action-result p{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.success{
+    color: rgb(172, 236, 172);
+}
+.failure{
+    color: rgb(236, 172, 172);
+}

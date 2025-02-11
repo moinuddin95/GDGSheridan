@@ -16,9 +16,6 @@ menu {
 menu.show {
   transform: translateY(-100%);
 }
-.sidebar.show {
-  transform: translateX(0%);
-}
 /* Menu styles here */
 
 .navbar {
@@ -76,81 +73,3 @@ menu > a > img {
   margin: 0vw 0vw 0vw 10vw;
 }
 /* Side bar overriding styles here */
-.sidebar {
-  display: block;
-  position: fixed;
-  z-index: 99;
-  top: 10vh;
-  right: 0rem;
-  background-color: white;
-  margin: 0rem;
-  transform: translateX(100%);
-  box-shadow: -10px 10px 5px rgb(0, 0, 0, 0);
-  width: 50vw;
-  height: 50vh;
-  transition: 500ms transform ease;
-}
-.sidebar > div {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto;
-}
-.sidebar > div > button {
-  background-color: white;
-  padding: 5rem 12rem;
-  border: none;
-}
-.sidebar > div > button:{
-  background-color: white;
-  padding: 5rem 12rem;
-  border: none;
-}
-#tabs {
-  /* display will be flex */
-  display: none;
-  justify-content: space-evenly;
-  background-color: transparent;
-  top: 1rem;
-  right: 3rem;
-  border: none;
-  width: 5rem;
-  height: 5rem;
-  margin: 0vw 10vw 0vw 0vw;
-  z-index: 100;
-}
-#tabs > span {
-  transition: 0.5s transform ease;
-  background-color: white;
-  position: absolute;
-  display: block;
-  width: 0.2rem;
-  height: 5rem;
-}
-#tabs.open > span {
-  transform: rotateZ(90deg) scaleY(70%);
-  background-color: white;
-}
-#tabs.open > span:nth-child(2) {
-  transform: translateY(1.2rem) rotateZ(90deg) scaleY(70%);
-}
-#tabs.open > span:nth-child(3) {
-  transform: translateY(-1.2rem) rotateZ(90deg) scaleY(70%);
-}
-#tabs.close > span {
-  transform: rotateZ(45deg);
-}
-#tabs.close > span:nth-child(2) {
-  transform: rotateZ(-45deg);
-}
-#tabs.close > span:nth-child(3) {
-  transform: rotateZ(-45deg);
-}
-@media (max-width: 720px) {
-  #tabs{
-    display: flex;
-  }
-  .navbar{
-    display: none;
-  }
-}
