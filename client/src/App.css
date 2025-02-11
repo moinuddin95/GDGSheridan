@@ -1,18 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-:root {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  width: 100vw;
-  overscroll-behavior-y: none;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+:root{
+    font-size:62.5%;
+    overflow-x: hidden;
+    width: 100vw;
 }
-body {
-  min-height: 100vh;
-  overscroll-behavior-y: none;
+body{
+    min-height: 100vh;
 }
-* {
-  font-family: "JetBrains Mono", monospace;
-  font-weight: lighter;
-  font-size: 1.6rem;
-  margin: 0px;
-  padding: 0px;
+*{
+    font-family: 'JetBrains Mono', monospace;  
+    font-weight: lighter; 
+    font-size: 1.6rem;
+    margin: 0px;
+    padding: 0px;
 }

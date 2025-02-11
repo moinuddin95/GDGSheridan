@@ -1,75 +1,13 @@
 import "./EventsForm.css";
-import { useState, useEffect, ChangeEvent } from "react";
+import useFormInput from "../../hooks/useFormInput";
 import { useNavigate } from "react-router-dom";
 import Compressor from "compressorjs";
-
-interface EventsFormProps {
-  displayName: string;
-}
+import EventsFormProps from "../../interfaces/EventFormProps";
 
 function EventsForm({ displayName }: EventsFormProps) {
-  const [formInput, setFormInput] = useState({
-    eventName: "",
-    eventDate: "",
-    eventTimeFrom: "",
-    eventTimeTo: "",
-    eventLocation: "",
-    eventDescription: "",
-    eventThumbnail: null,
-  });
-
   const navigate = useNavigate();
 
-    const handleChange = async (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    let { name, value } = e.target;
-    if (e.target instanceof HTMLInputElement) {
-      const files = e.target.files;
-      if (name === "eventThumbnail" && files?.[0]) {
-        value = await readFileAsDataURL(files[0]);
-      }
-    }
-    setFormInput((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const readFileAsDataURL = (file: File): Promise<string> => {
-    return new Promise<string>((resolve, reject) => {
-      new Compressor(file, {
-        quality: 0.6,
-
-        // The compression process is asynchronous,
-        // which means you have to access the `result` in the `success` hook function.
-        success(compressedFile) {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            resolve(e.target?.result?.toString().split(",")[1] ?? "");
-          };
-          reader.onerror = reject;
-          reader.readAsDataURL(compressedFile);
-        },
-        error(err) {
-          console.log(err.message);
-        },
-      });
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    fetch("/api/submitEvent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...formInput, executiveName: displayName }),
-    })
-      .then((res) => navigate("/success"))
-      .catch((error) => navigate("/error"));
-  };
+  const { handleChange, handleSubmit} = useFormInput(displayName);
 
   return (
     <div className="EventsForm">

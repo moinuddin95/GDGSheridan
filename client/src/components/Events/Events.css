@@ -44,8 +44,6 @@ a{
     display: flex;
     padding-left: 7rem;
     padding-top: 15rem;
-    /* grid-template-columns: repeat(10, 3.3rem);
-    grid-template-rows: repeat(20, 2.6rem); */
     flex-direction: column;
     text-align: center;
     box-sizing: border-box;
@@ -55,6 +53,7 @@ a{
     color: black;
     font-size: 4rem;
     text-align: left;
+    min-height: 10rem;
 }
 .eventCard > h3{
     margin-top: 1rem;

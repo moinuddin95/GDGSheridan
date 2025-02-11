@@ -1,10 +1,6 @@
 import React from 'react';
 import "./ActionResult.css";
-interface ActionResultProps {
-  message: string;
-  isSuccess: boolean;
-}
-
+import ActionResultProps from "../../interfaces/ActionResultProps";
 const ActionResult: React.FC<ActionResultProps> = ({ message, isSuccess }) => {
   return (
     <main className={`action-result ${isSuccess ? 'success' : 'error'}`}>
