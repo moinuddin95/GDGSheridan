@@ -1,27 +1,9 @@
 import "./Events.css";
 import template from "../../assets/template.png";
-import { useState, useEffect } from "react";
-import axios from "axios";
-
-interface EventsInterface {
-  eventName: string;
-  eventDate: string;
-}
+import useEvents from "../../hooks/useEvents";
 
 function Events() {
-  const [events, setEvents] = useState<EventsInterface[]>([]);
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await axios.get("/api/events");
-        console.log(response.data);
-        setEvents(response.data);
-      } catch (err) {
-        console.log("Error while requesting events: " + err);
-      }
-    };
-    fetchEvents();
-  }, []);
+  const { events } = useEvents();
   return (
     <section id="Events">
       <h1>Events</h1>
