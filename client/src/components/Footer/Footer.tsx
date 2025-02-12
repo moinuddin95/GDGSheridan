@@ -1,7 +1,4 @@
 import "./Footer.css";
-import discord from "../../assets/discord.png";
-import linkedin from "../../assets/linkedin.png";
-import instagram from "../../assets/instagram.png";
 import Socials from "../UI/Socials/Socials";
 
 const Footer = () => {

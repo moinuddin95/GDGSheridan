@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
@@ -10,6 +6,7 @@ import Logout from "./pages/Logout";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ActionResult from "./components/ActionResult/ActionResult";
+import EventDetails from "./components/EventDetails/EventsDetails";
 function App() {
   return (
     <Router>
@@ -28,14 +25,18 @@ function App() {
           }
         />
         <Route
-          path="/*"
+          path="/error"
           element={
-            <ActionResult
-              message="404 Path not found"
-              isSuccess={false}
-            />
+            <ActionResult message="Failed to upload event" isSuccess={false} />
           }
         />
+        <Route
+          path="/*"
+          element={
+            <ActionResult message="404 Path not found" isSuccess={false} />
+          }
+        />
+        <Route path="/events/:id" element={<EventDetails />} />
       </Routes>
       <Footer />
     </Router>

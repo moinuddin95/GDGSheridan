@@ -1,7 +1,6 @@
 import "./Navbar.css";
 import redirect from "../../assets/redirect.png";
 import logo from "../../assets/logo.png";
-import { useState, useEffect, useRef } from "react";
 import Sidebar from "../UI/Sidebar/Sidebar";
 import { handleScrollToComponent } from "../../utils/scrollUtils";
 import useScroll from "../../hooks/useScroll";
