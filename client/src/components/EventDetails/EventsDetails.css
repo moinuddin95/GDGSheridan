@@ -1,0 +1,99 @@
+#event-details{
+  position: relative;
+  padding: 20vh 10vw 10vh 10vw;
+  background-color: #518B50;
+  display: flex;
+  flex-direction: column;
+  min-height: 91.5vh;
+  margin: 0px;
+  box-sizing: border-box;
+  row-gap: 20px;
+  animation: background 120s ease infinite;
+}
+#event-details h1{
+  font-size: 6rem;
+  color: #f5f5f5;
+  margin: 0px 0px 50px 0px;
+  padding: 0px;
+  align-self: center;
+  
+}
+#event-details h2{
+  font-size: 4rem;
+  color: #f5f5f5;
+  margin: 0px;
+  padding: 0px;
+  align-self: flex-start;
+}
+#event-details p{
+  font-size: 2rem;
+  color: #f5f5f5;
+  margin: 0px;
+  padding: 0px;
+  align-self: flex-start;
+}
+#event-details h3{
+  font-size: 2rem;
+  margin: 0px;
+  padding: 0px;
+  align-self: flex-start;
+}
+#event-details h3:nth-of-type(1){
+  color: #ffc2ac;
+}
+#event-details h3:nth-of-type(2){
+  color: #c2ffc8;
+}
+
+#event-details ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 50vw;
+}
+#event-details li{
+  font-size: 1.8rem;
+  color: #f5f5f5;
+  margin: 0px;
+  padding: 1rem 3rem;
+  border: .5rem solid #f5f5f5;
+  border-radius: 2rem;
+}
+
+#event-details button{
+  font-size: 4rem;
+  color: black;
+  background-color: #f5f5f5;
+  border: solid .5rem #f5f5f5;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  margin: 5rem 0rem 0rem 0rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: 0.5s ease;
+}
+#event-details button:hover{
+  background-color: transparent;
+  color: #f5f5f5;
+}
+
+@keyframes background{
+  0%{
+    background-color: #518B50;
+  }
+  25%{
+    background-color: #8a8b50;
+  }
+  50%{
+    background-color: #50798b;
+  }
+  75%{
+    background-color: #8b5050;
+  }
+  100%{
+    background-color: #518B50;
+  }
+}
