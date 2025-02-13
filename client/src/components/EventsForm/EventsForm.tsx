@@ -73,17 +73,6 @@ function EventsForm({ displayName }: EventsFormProps) {
             onChange={handleChange}
           ></textarea>
         </div>
-
-        <div className="thumbnail">
-          <label htmlFor="event-thumbnail">Event Thumbnail</label>
-          <input
-            type="file"
-            id="event-thumbnail"
-            name="eventThumbnail"
-            accept="image/*"
-            onChange={handleChange}
-          />
-        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

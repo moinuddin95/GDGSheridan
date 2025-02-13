@@ -28,7 +28,6 @@ const callback = [
 ];
 
 const getUser = (req, res) => {
-  req.user ? console.log(req.user) : console.log("No user found");
   res.json(req.user || null);
 };
 

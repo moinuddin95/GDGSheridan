@@ -12,7 +12,6 @@ const useFormInput = (displayName: string) => {
     eventTimeTo: "",
     eventLocation: "",
     eventDescription: "",
-    eventThumbnail: null,
   });
 
   const handleChange = async (
@@ -33,14 +32,20 @@ const useFormInput = (displayName: string) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch("/api/submitEvent", {
+    fetch("/api/events/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ...formInput, executiveName: displayName }),
     })
-      .then((res) => navigate("/success"))
+      .then((res) => {
+        if (res.status === 201) {
+          navigate("/success");
+        } else {
+          navigate("/error");
+        }
+      })
       .catch((error) => navigate("/error"));
   };
 
