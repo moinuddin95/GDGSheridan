@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import useEventById from "../../hooks/useEventById";
-import { Navigate } from "react-router-dom";
 import Loading from "../UI/Loading/Loading";
 import "./EventsDetails.css";
 function EventsDetails() {
