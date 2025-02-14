@@ -1,18 +1,75 @@
 #loading {
   position: relative;
-  padding: 20vh 10vw 10vh 10vw;
+  padding: 20vh 10vw 20vh 10vw;
   background-color: #518B50;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 91.5vh;
   margin: 0px;
   box-sizing: border-box;
   row-gap: 20px;
 }
-#loading h1 {
-  font-size: 6rem;
-  color: #f5f5f5;
-  margin: 0px 0px 50px 0px;
-  padding: 0px;
-  align-self: center;
+#loading .sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  transform: scale(1.25);
+}
+
+#loading .sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #9fff94;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+#loading .sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+#loading .sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+#loading .sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+#loading .sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+#loading .sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+#loading .sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+#loading .sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+#loading .sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+#loading .sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
 }

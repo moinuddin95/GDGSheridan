@@ -10,7 +10,7 @@ const router = Router();
 
 router.get("/login", login);
 
-router.get("/logout", logout);
+router.post("/logout", logout);
 
 router.get("/callback", ...callback);
 
