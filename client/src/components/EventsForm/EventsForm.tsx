@@ -24,11 +24,20 @@ function EventsForm({ displayName }: EventsFormProps) {
           />
         </div>
         <div>
-          <label htmlFor="event-date">Event Date</label>
+          <label htmlFor="event-date-from">Event Date From</label>
           <input
             type="date"
-            id="event-date"
-            name="eventDate"
+            id="event-date-from"
+            name="eventDateFrom"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="event-date-to">Event Date To</label>
+          <input
+            type="date"
+            id="event-date-to"
+            name="eventDateTo"
             onChange={handleChange}
           />
         </div>

@@ -2,7 +2,8 @@ interface EventsCardInterface {
   id: number;
   executiveName: string;
   eventName: string;
-  eventDate: string;
+  eventDateFrom: string;
+  eventDateTo: string;
   eventTimeFrom: string;
   eventTimeTo: string;
   eventLocation: string;
