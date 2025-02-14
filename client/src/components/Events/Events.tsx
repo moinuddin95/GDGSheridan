@@ -1,10 +1,11 @@
 import "./Events.css";
 import template from "../../assets/template.png";
 import useEvents from "../../hooks/useEvents";
+import Loading from "../UI/Loading/Loading";
 
 function Events() {
   const { events } = useEvents();
-  return (
+  return events ? (
     <section id="Events">
       <h1>Events</h1>
       <div>
@@ -24,7 +25,7 @@ function Events() {
         })}
       </div>
     </section>
-  );
+  ) : (<Loading />);
 }
 
 export default Events;

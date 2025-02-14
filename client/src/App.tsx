@@ -27,7 +27,7 @@ function App() {
         <Route
           path="/error"
           element={
-            <ActionResult message="Failed to upload event" isSuccess={false} />
+            <ActionResult message="Something went wrong :(" isSuccess={false} />
           }
         />
         <Route

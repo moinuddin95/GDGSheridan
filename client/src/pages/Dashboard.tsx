@@ -1,6 +1,7 @@
 import Footer from "../components/Footer/Footer";
 import EventsForm from "../components/EventsForm/EventsForm";
 import { useState, useEffect } from "react";
+import Loading from "../components/UI/Loading/Loading";
 
 export default function Dashboard() {
   const [user, setUser] = useState("");
@@ -21,7 +22,7 @@ export default function Dashboard() {
       {user ? (
         <EventsForm displayName={user} />
       ) : (
-        <button onClick={handleLogin}>Login with google</button>
+        <Loading />
       )}
     </>
   );

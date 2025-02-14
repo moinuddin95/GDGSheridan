@@ -7,6 +7,17 @@ const getEvents = (req, res) => {
   res.json(JSON.parse(data));
 };
 
+const getEventById = (req, res) => {
+  let id = parseInt(req.params.id);
+  let data = fs.readFileSync("./model/Events.json", { encoding: "utf-8" });
+  let events = JSON.parse(data);
+  let event = events.find((event) => event.id === id);
+  if(event === undefined){
+    res.status(404).send("Event not found");
+  }
+  res.status(200).json(event);
+};
+
 const submitEvent = (req, res) => {
   const Event = {
     id: ++eventsCount,
@@ -26,4 +37,4 @@ const submitEvent = (req, res) => {
   res.status(201).send("Event added successfully");
 };
 
-export { getEvents, submitEvent };
+export { getEvents, submitEvent, getEventById };
