@@ -44,6 +44,6 @@ function EventsDetails() {
     </div>
   ) : (
     <Loading />
-  ) /*<Navigate to="/error"/>*/;
+  );
 }
 export default EventsDetails;
