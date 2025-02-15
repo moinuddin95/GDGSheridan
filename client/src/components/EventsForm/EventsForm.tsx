@@ -8,7 +8,7 @@ function EventsForm({ displayName }: EventsFormProps) {
   const navigate = useNavigate();
 
   const { handleChange, handleSubmit} = useFormInput(displayName);
-
+  
   return (
     <div className="EventsForm">
       <h1>Welcome {displayName}</h1>
@@ -81,6 +81,11 @@ function EventsForm({ displayName }: EventsFormProps) {
             cols={40}
             onChange={handleChange}
           ></textarea>
+        </div>
+
+        <div className="key-themes">
+          <label htmlFor="event-themes">Event Theme 1: </label>
+          <input type="text" id="event-themes" name="eventThemes" onChange={handleChange} />
         </div>
         <button type="submit">Submit</button>
       </form>

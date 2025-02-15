@@ -10,9 +10,9 @@ footer nav{
     position: relative;
 }
 footer .socials{
-    width: 15rem;
+    width: 20rem;
 }
 footer .socials a img{
-    width: 3rem;
-    height: auto;
+    height: 3rem;
+    width: auto;
 }
