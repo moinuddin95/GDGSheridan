@@ -5,8 +5,7 @@ const useAnimate = () => {
   useEffect(() => {
     const handleScrollForAnimation = () => {
       const bookDiv = document.querySelector("#book");
-      if (bookDiv)
-        if (window.scrollY > bookDiv.getBoundingClientRect().top)
+        if (bookDiv && window.scrollY > bookDiv.getBoundingClientRect().top)
           bookDiv.classList.add("turn");
     };
     window.addEventListener("scroll", handleScrollForAnimation);

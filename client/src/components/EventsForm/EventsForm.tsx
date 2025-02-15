@@ -2,7 +2,7 @@ import "./EventsForm.css";
 import useFormInput from "../../hooks/useFormInput";
 import { useNavigate } from "react-router-dom";
 import Compressor from "compressorjs";
-import EventsFormProps from "../../interfaces/EventFormProps";
+import EventsFormProps from "../../interfaces/Props/EventFormProps";
 
 function EventsForm({ displayName }: EventsFormProps) {
   const navigate = useNavigate();

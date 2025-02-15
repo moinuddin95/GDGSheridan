@@ -1,7 +1,8 @@
-import Footer from "../components/Footer/Footer";
 import EventsForm from "../components/EventsForm/EventsForm";
 import { useState, useEffect } from "react";
 import Loading from "../components/UI/Loading/Loading";
+import Navbar from "../components/Navbar/Navbar";
+import DashboardOptions from "../components/UI/NavbarOptions/DashboardOptions/DashboardOptions";
 
 export default function Dashboard() {
   const [user, setUser] = useState("");
@@ -19,6 +20,9 @@ export default function Dashboard() {
   };
   return (
     <>
+      <Navbar>
+        <DashboardOptions />
+      </Navbar>
       {user ? (
         <EventsForm displayName={user} />
       ) : (

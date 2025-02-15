@@ -10,7 +10,6 @@ import EventDetails from "./components/EventDetails/EventsDetails";
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
