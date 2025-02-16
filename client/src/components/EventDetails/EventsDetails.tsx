@@ -5,7 +5,7 @@ import "./EventsDetails.css";
 function EventsDetails() {
   const { id } = useParams();
   const event = useEventById(id);
-  console.log("Event received:" + event);
+  console.log("Event received:" + JSON.stringify(event, null, 2));
   return event ? (
     <div id="event-details">
       <h1>{event?.eventName}</h1>
@@ -27,18 +27,9 @@ function EventsDetails() {
       )}
       <h2>Key Themes</h2>
       <ul>
-        <li>Web Development</li>
-        <li>Mobile Development</li>
-        <li>Artificial Intelligence</li>
-        <li>Machine Learning</li>
-        <li>Web Development</li>
-        <li>Mobile Development</li>
-        <li>Artificial Intelligence</li>
-        <li>Machine Learning</li>
-        <li>Web Development</li>
-        <li>Mobile Development</li>
-        <li>Artificial Intelligence</li>
-        <li>Machine Learning</li>
+        {event?.eventThemes.map((theme) => (
+          <li key={theme}>{theme}</li>
+        ))}
       </ul>
       <button>RSVP</button>
     </div>

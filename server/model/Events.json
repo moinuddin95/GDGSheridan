@@ -8,7 +8,12 @@
     "eventTimeFrom": "09:00",
     "eventTimeTo": "17:00",
     "eventLocation": "Main Hall",
-    "eventDescription": "Annual hackathon event."
+    "eventDescription": "Annual hackathon event.",
+    "eventThemes": [
+      "Innovation",
+      "Collaboration",
+      "Technology"
+    ]
   },
   {
     "id": 2,
@@ -20,7 +25,12 @@
     "eventTimeTo": "16:00",
     "eventLocation": "Conference Center",
     "eventDescription": "Conference on the latest in technology.",
-    "eventThumbnail": "C:\\fakepath\\TechConference.jpg"
+    "eventThumbnail": "C:\\fakepath\\TechConference.jpg",
+    "eventThemes": [
+      "Technology",
+      "Innovation",
+      "Networking"
+    ]
   },
   {
     "id": 3,
@@ -31,7 +41,12 @@
     "eventTimeFrom": "13:00",
     "eventTimeTo": "15:00",
     "eventLocation": "Room 101",
-    "eventDescription": "Hands-on workshop on web development."
+    "eventDescription": "Hands-on workshop on web development.",
+    "eventThemes": [
+      "Web Development",
+      "Hands-on",
+      "Learning"
+    ]
   },
   {
     "id": 4,
@@ -42,7 +57,12 @@
     "eventTimeFrom": "18:00",
     "eventTimeTo": "20:00",
     "eventLocation": "Community Center",
-    "eventDescription": "Networking meetup for tech enthusiasts."
+    "eventDescription": "Networking meetup for tech enthusiasts.",
+    "eventThemes": [
+      "Networking",
+      "Community",
+      "Technology"
+    ]
   },
   {
     "id": 5,
@@ -53,7 +73,12 @@
     "eventTimeFrom": "09:00",
     "eventTimeTo": "17:00",
     "eventLocation": "Convention Center",
-    "eventDescription": "New Year tech conference."
+    "eventDescription": "New Year tech conference.",
+    "eventThemes": [
+      "Technology",
+      "Innovation",
+      "Future"
+    ]
   },
   {
     "id": 6,
@@ -64,7 +89,12 @@
     "eventTimeFrom": "12:13",
     "eventTimeTo": "12:14",
     "eventLocation": "Trafalgar",
-    "eventDescription": "testing #3"
+    "eventDescription": "testing #3",
+    "eventThemes": [
+      "Testing",
+      "Hackathon",
+      "Development"
+    ]
   },
   {
     "id": 7,
@@ -75,7 +105,12 @@
     "eventTimeFrom": "10:00",
     "eventTimeTo": "12:00",
     "eventLocation": "Lab 202",
-    "eventDescription": "Workshop on AI and machine learning."
+    "eventDescription": "Workshop on AI and machine learning.",
+    "eventThemes": [
+      "AI",
+      "Machine Learning",
+      "Hands-on"
+    ]
   },
   {
     "id": 8,
@@ -86,7 +121,12 @@
     "eventTimeFrom": "18:00",
     "eventTimeTo": "21:00",
     "eventLocation": "City Hall",
-    "eventDescription": "Networking event for professionals."
+    "eventDescription": "Networking event for professionals.",
+    "eventThemes": [
+      "Networking",
+      "Professionals",
+      "Community"
+    ]
   },
   {
     "id": 9,
@@ -97,7 +137,12 @@
     "eventTimeFrom": "14:00",
     "eventTimeTo": "17:00",
     "eventLocation": "Innovation Hub",
-    "eventDescription": "Pitch event for startups."
+    "eventDescription": "Pitch event for startups.",
+    "eventThemes": [
+      "Startups",
+      "Pitching",
+      "Innovation"
+    ]
   },
   {
     "id": 10,
@@ -108,17 +153,27 @@
     "eventTimeFrom": "08:00",
     "eventTimeTo": "16:00",
     "eventLocation": "Tech Academy",
-    "eventDescription": "Intensive coding bootcamp for beginners."
+    "eventDescription": "Intensive coding bootcamp for beginners.",
+    "eventThemes": [
+      "Coding",
+      "Bootcamp",
+      "Beginners"
+    ]
   },
   {
     "id": 11,
     "executiveName": "Moinuddin Shaikh",
-    "eventName": "Hackaka",
-    "eventDateFrom": "2025-02-13",
-    "eventDateTo": "2025-02-14",
-    "eventTimeFrom": "12:37",
-    "eventTimeTo": "12:38",
-    "eventLocation": "traf",
-    "eventDescription": "test"
+    "eventName": "Moye moye",
+    "eventDateFrom": "2025-02-16",
+    "eventDateTo": "2025-02-16",
+    "eventTimeFrom": "00:26",
+    "eventTimeTo": "01:26",
+    "eventLocation": "testing",
+    "eventDescription": "hello",
+    "eventThemes": [
+      "good",
+      "great",
+      "best"
+    ]
   }
 ]

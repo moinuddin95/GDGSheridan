@@ -11,7 +11,7 @@ const useEventById = (id: string = "1") => {
         const response = await axios.get(`/api/events/${id}`);
         if (response.status === 200) {
           console.log("response.data:", response.data);
-          setEvent(response.data as EventsCardInterface);
+          setEvent(response.data);
         } else {
           setEvent(undefined);
         }
@@ -21,7 +21,7 @@ const useEventById = (id: string = "1") => {
       }
     };
     fetchEvent();
-  }, [id]);
+  }, []);
 
   return event;
 };

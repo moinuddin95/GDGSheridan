@@ -23,11 +23,13 @@ const submitEvent = (req, res) => {
     id: ++eventsCount,
     executiveName: req.body.executiveName,
     eventName: req.body.eventName,
-    eventDate: req.body.eventDate,
+    eventDateFrom: req.body.eventDateFrom,
+    eventDateTo: req.body.eventDateTo,
     eventTimeFrom: req.body.eventTimeFrom,
     eventTimeTo: req.body.eventTimeTo,
     eventLocation: req.body.eventLocation,
     eventDescription: req.body.eventDescription,
+    eventThemes: req.body.eventThemes,
   };
   let events = JSON.parse(
     fs.readFileSync("./model/Events.json", { encoding: "utf-8" })
