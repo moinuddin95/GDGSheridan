@@ -12,16 +12,36 @@ const useFormInput = (displayName: string) => {
     eventTimeTo: "",
     eventLocation: "",
     eventDescription: "",
+    eventThemes: [""],
   });
 
   const handleChange = async (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    index?: number
   ) => {
     let { name, value } = e.target;
     if (e.target instanceof HTMLInputElement) {
       const files = e.target.files;
       if (name === "eventThumbnail" && files?.[0]) {
         value = await readFileAsDataURL(files[0]);
+      }
+      if (name === "eventThemes" && index !== undefined) {
+        let updatedThemes = formInput.eventThemes;
+        updatedThemes[index] = value;
+        const lastIndex = updatedThemes.length - 1;
+        if(index === lastIndex) {
+          updatedThemes.push("");
+        }else{
+          if(value === ""){
+            updatedThemes.splice(index, 1);
+            document.getElementById(`event-theme-${updatedThemes.length - 1}`)?.focus();
+          }
+        }
+        setFormInput((prev) => ({
+          ...prev,
+          eventThemes: updatedThemes,
+        }));
+        return;
       }
     }
     setFormInput((prev) => ({
@@ -49,7 +69,7 @@ const useFormInput = (displayName: string) => {
       .catch((error) => navigate("/error"));
   };
 
-  return { handleChange, handleSubmit };
+  return { handleChange, handleSubmit, keyThemes: formInput.eventThemes };
 };
 
 export default useFormInput;

@@ -8,6 +8,7 @@ interface EventsCardInterface {
   eventTimeTo: string;
   eventLocation: string;
   eventDescription: string;
+  eventThemes: string[];
 }
 
 export default EventsCardInterface;

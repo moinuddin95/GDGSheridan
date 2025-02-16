@@ -1,14 +1,13 @@
 import "./EventsForm.css";
 import useFormInput from "../../hooks/useFormInput";
 import { useNavigate } from "react-router-dom";
-import Compressor from "compressorjs";
 import EventsFormProps from "../../interfaces/EventFormProps";
 
 function EventsForm({ displayName }: EventsFormProps) {
   const navigate = useNavigate();
 
-  const { handleChange, handleSubmit} = useFormInput(displayName);
-  
+  const { handleChange, handleSubmit, keyThemes } = useFormInput(displayName);
+
   return (
     <div className="EventsForm">
       <h1>Welcome {displayName}</h1>
@@ -83,10 +82,21 @@ function EventsForm({ displayName }: EventsFormProps) {
           ></textarea>
         </div>
 
-        <div className="key-themes">
-          <label htmlFor="event-themes">Event Theme 1: </label>
-          <input type="text" id="event-themes" name="eventThemes" onChange={handleChange} />
+        <div className="event-themes">
+          {Array.isArray(keyThemes) && keyThemes.map((_, index) => (
+            <div key={`theme-${index}`}>
+              <label htmlFor={`event-theme-${index}`}>Event Theme {index + 1}: </label>
+              <input
+                type="text"
+                id={`event-theme-${index}`}
+                name={"eventThemes"}
+                onChange={(e) => {handleChange(e, index)}}
+                value={keyThemes[index]}
+              />
+            </div>
+          ))}
         </div>
+
         <button type="submit">Submit</button>
       </form>
     </div>
