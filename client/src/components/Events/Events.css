@@ -33,10 +33,10 @@ a{
     width: 33rem;
     height: 52rem;
     border-radius: 1rem;
-    box-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
     margin: 0rem 5rem;
     justify-content: center;
-    background-color: white;
+    background-size: cover;
+    background-position: center;
 }
 .eventCard{
     width: 33rem;
