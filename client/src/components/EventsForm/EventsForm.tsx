@@ -22,25 +22,27 @@ function EventsForm({ displayName }: EventsFormProps) {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor="event-date-from">Event Date From</label>
-          <input
-            type="date"
-            id="event-date-from"
-            name="eventDateFrom"
-            onChange={handleChange}
-          />
+        <div className="datetime">
+          <div>
+            <label htmlFor="event-date-from">From</label>
+            <input
+              type="date"
+              id="event-date-from"
+              name="eventDateFrom"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="event-date-to">To</label>
+            <input
+              type="date"
+              id="event-date-to"
+              name="eventDateTo"
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="event-date-to">Event Date To</label>
-          <input
-            type="date"
-            id="event-date-to"
-            name="eventDateTo"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="time">
+        <div className="datetime">
           <div>
             <label htmlFor="event-time-from">From</label>
             <input
@@ -82,10 +84,11 @@ function EventsForm({ displayName }: EventsFormProps) {
           ></textarea>
         </div>
 
+        <h2>Key Themes</h2>
         <div className="event-themes">
           {Array.isArray(keyThemes) && keyThemes.map((_, index) => (
             <div key={`theme-${index}`}>
-              <label htmlFor={`event-theme-${index}`}>Event Theme {index + 1}: </label>
+              <label htmlFor={`event-theme-${index}`}></label>
               <input
                 type="text"
                 id={`event-theme-${index}`}

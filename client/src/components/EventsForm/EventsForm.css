@@ -1,7 +1,7 @@
 .EventsForm {
     background-color: #50798B;
     padding-top: 15rem;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 .EventsForm > h1 {
@@ -13,11 +13,13 @@
 }
 form{
     display: flex;
+    padding-bottom: 4rem;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    row-gap: 2rem;
     color: white;
-    height: 40rem;
+    min-height: 40rem;
 }
 form > div{
     display: block;
@@ -32,7 +34,6 @@ form > div > input{
     width: 30rem;
     height: 3rem;
     padding: .3rem 0rem .3rem 1rem;
-    margin:1rem;
 }
 form > div > textarea{
     border-radius: 0.5rem;
@@ -40,17 +41,17 @@ form > div > textarea{
     margin: 1rem;
     padding: 1rem;
 }
-.time{
+.datetime{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.time > div{
-    margin: 0rem 3rem;
+.datetime > div{
+    margin: auto 3rem;
 }
-.time > div > label{
-    margin: 0rem 2rem;
+.datetime > div > label{
+    margin: auto 2rem;
 }
-.time > div > input{
+.datetime > div > input{
     border-radius: 0.5rem;
     border: none;
     width: 12rem;
@@ -60,6 +61,29 @@ form > div > textarea{
 .description{
     display: flex;
 }
+
+form > h2{
+    color: white;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.event-themes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+    max-width: 60vw;
+}
+.event-themes input{
+    border-radius: 0.5rem;
+    border: none;
+    width: 20rem;
+    height: 3rem;
+    padding: .3rem 0rem .3rem 1rem;
+}
+
 form > button{
     background-color: white;
     width: 20rem;
@@ -73,4 +97,3 @@ form > button{
     height: 5rem;
     justify-self: center;
 }
-
