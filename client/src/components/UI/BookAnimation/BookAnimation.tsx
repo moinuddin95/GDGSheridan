@@ -1,10 +1,12 @@
-import useAnimate from "../../../hooks/useAnimate";
 import "./BookAnimation.css";
-
+import useAnimate from "../../../hooks/useAnimate";
 function BookAnimation() {
   useAnimate();
   return (
-    <div id="book">
+    <div id="book" className="turn">
+      <span className="page"></span>
+      <span className="page"></span>
+      <span className="page"></span>
       <span className="page"></span>
       <span className="page"></span>
       <span className="page"></span>
