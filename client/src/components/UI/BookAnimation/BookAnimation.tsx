@@ -3,7 +3,7 @@ import useAnimate from "../../../hooks/useAnimate";
 function BookAnimation() {
   useAnimate();
   return (
-    <div id="book" className="turn">
+    <div id="book">
       <span className="page"></span>
       <span className="page"></span>
       <span className="page"></span>
