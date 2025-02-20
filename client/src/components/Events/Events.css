@@ -5,7 +5,8 @@
     margin: 0rem;
     padding-top: 3rem;
     padding-bottom: 5rem;
-    background-color: #518B50;
+    background-color: transparent;
+    /* background-color: #518B50; */
     height: 100vh;
     position: relative;
 }

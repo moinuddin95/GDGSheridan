@@ -1,5 +1,5 @@
 import "./BookAnimation.css";
-import useAnimate from "../../../hooks/useAnimate";
+import useAnimate from "../../../hooks/useBookAnimate";
 function BookAnimation() {
   useAnimate();
   return (

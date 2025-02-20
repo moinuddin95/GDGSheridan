@@ -1,7 +1,8 @@
 main {
   position: relative;
   padding: 8vw 5vw 0vw 10vw;
-  background-color: #50798b;
+  background-color: transparent;
+  /* background-color: #50798b; */
   height: 100vh;
   display: flex;
   margin: 0px;

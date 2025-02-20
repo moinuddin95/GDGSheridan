@@ -1,7 +1,7 @@
-import Footer from "../components/Footer/Footer";
-import EventsForm from "../components/EventsForm/EventsForm";
+import EventsForm from "../../components/EventsForm/EventsForm";
 import { useState, useEffect } from "react";
-import Loading from "../components/UI/Loading/Loading";
+import Loading from "../../components/UI/Loading/Loading";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   const [user, setUser] = useState("");
@@ -17,13 +17,5 @@ export default function Dashboard() {
   const handleLogin = () => {
     window.location.href = "/api/auth/login";
   };
-  return (
-    <>
-      {user ? (
-        <EventsForm displayName={user} />
-      ) : (
-        <Loading />
-      )}
-    </>
-  );
+  return <>{user ? <EventsForm displayName={user} /> : <Loading />}</>;
 }

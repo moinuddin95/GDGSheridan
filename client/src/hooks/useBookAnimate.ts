@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useAnimate = () => {
+const useBookAnimate = () => {
   useEffect(() => {
     const handleScrollForAnimation = () => {
       const pages: NodeListOf<HTMLElement> =
@@ -8,7 +8,7 @@ const useAnimate = () => {
       const cover: HTMLElement =
         document.querySelectorAll<HTMLElement>(".cover")[1];
 
-      if (!pages && !cover) return;
+      if (!pages || !cover) return;
       const rectTop = cover.getBoundingClientRect().top;
       const rectBottom = cover.getBoundingClientRect().bottom;
       // getBoudingClientRect().top returns the distance between the top of the element
@@ -43,4 +43,4 @@ const useAnimate = () => {
   }, []);
 };
 
-export default useAnimate;
+export default useBookAnimate;

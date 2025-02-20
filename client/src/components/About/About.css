@@ -4,7 +4,8 @@
   flex-direction: column;
   align-items: center;
   margin: 0rem;
-  background-color: #8a8b50;
+  background-color: transparent;
+  /* background-color: #8a8b50; */
   height: 100vh;
 }
 #About h1 {
