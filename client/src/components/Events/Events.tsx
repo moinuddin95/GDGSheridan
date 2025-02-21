@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 
 function Events() {
   const { events } = useEvents();
+
   return events ? (
     <section id="Events">
       <h1>Events</h1>
-      <div>
+      <div >
         {events.map((event) => {
           return (
             <Link

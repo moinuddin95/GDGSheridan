@@ -14,6 +14,7 @@ rgb(0, 139, 80);
       const parentElement = document.querySelector("#home");
       if (!parentElement) return;
       const childElements = parentElement.children;
+      //TODO: Decide some good colors
       const colorList = [
         [80, 121, 139],
         [201, 186, 23],
@@ -44,7 +45,6 @@ rgb(0, 139, 80);
               currentElement.getBoundingClientRect().top) /
               currentElement.getBoundingClientRect().height;
           bgColor = `rgb(${color1}, ${color2}, ${color3})`;
-          console.log(`rgb(${color1}, ${color2}, ${color3})`);
         }
       }
       (parentElement as HTMLElement).style.backgroundColor = bgColor;
