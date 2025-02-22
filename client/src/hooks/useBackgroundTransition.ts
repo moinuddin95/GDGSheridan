@@ -5,9 +5,9 @@ function useBackgroundTransition() {
     /*
     color sequence:
 rgb(80, 121, 139)
-rgb(201, 186, 23);
-
 rgb(0, 139, 80);
+rgb(162, 84, 84);
+
 
     */
     const handleScroll = () => {
@@ -17,8 +17,8 @@ rgb(0, 139, 80);
       //TODO: Decide some good colors
       const colorList = [
         [80, 121, 139],
-        [201, 186, 23],
         [0, 139, 80],
+        [162, 84, 84],
       ];
       let bgColor = "";
       if (!childElements) return;
