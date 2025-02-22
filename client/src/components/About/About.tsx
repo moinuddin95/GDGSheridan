@@ -1,30 +1,9 @@
 import "./About.css";
 import BookAnimation from "../UI/BookAnimation/BookAnimation";
-import { useEffect } from "react";
+import useShowAnimation from "../../hooks/useShowAnimation";
 function About() {
-  useEffect(() => {
-    const abouth1 = document.querySelector("#About h1");
-    const abouth3 = document.querySelector("#About h3");
-    const addShow = () => {
-      if (abouth1) {
-        const top = abouth1.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) abouth1.classList.add("show");
-        else if (abouth1.classList.contains("show"))
-          abouth1.classList.remove("show");
-      }
-      if (abouth3) {
-        const top = abouth3.getBoundingClientRect().top;
-        if (top < window.innerHeight - 25) abouth3.classList.add("show");
-        else if (abouth3.classList.contains("show"))
-          abouth3.classList.remove("show");
-      }
-      
-    };
-    window.addEventListener("scroll", addShow);
-    return () => {
-      window.removeEventListener("scroll", addShow);
-    };
-  }, []);
+  useShowAnimation("#About > h1", 100);
+  useShowAnimation("#About > h3", 100);
   return (
     <section id="About">
       <h1>About</h1>

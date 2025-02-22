@@ -4,10 +4,12 @@ import eventCardYellow from "../../assets/event-card-yellow.png";
 import useEvents from "../../hooks/useEvents";
 import Loading from "../UI/Loading/Loading";
 import { Link } from "react-router-dom";
+import useShowAnimation from "../../hooks/useShowAnimation";
 
 function Events() {
   const { events } = useEvents();
-
+  useShowAnimation("#Events > h1", 100);
+  useShowAnimation("#Events > div", 150);
   return events ? (
     <section id="Events">
       <h1>Events</h1>

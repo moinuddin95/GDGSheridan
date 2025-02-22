@@ -18,6 +18,7 @@ a{
     color: white;
     font-size: 6rem;
     text-shadow: 0.1rem 0.2rem 0.5rem rgb(49, 49, 49);
+    transform: translateX(-100rem);
 }
 #Events > div{
     margin-left: 10%;
@@ -29,6 +30,10 @@ a{
     overflow-x: scroll;
     overflow-y: hidden;
     scrollbar-width: none;
+    transform: translateX(100vw);
+}
+#Events .show{
+    animation: scrollAnimation 2s ease forwards;
 }
 #Events > div > a{
     width: 33rem;
