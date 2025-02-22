@@ -3,7 +3,7 @@ import redirect from "../../assets/redirect.png";
 import logo from "../../assets/logo.png";
 import Sidebar from "../UI/Sidebar/Sidebar";
 import { handleScrollToComponent } from "../../utils/scrollUtils";
-import useScroll from "../../hooks/useScroll";
+import useScroll from "../../hooks/useNavbarScroll";
 const Navbar = () => {
   const { menuVisibility } = useScroll();
 

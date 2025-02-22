@@ -4,7 +4,7 @@ menu {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  transform: translateY(0);
+  transform: translateY(-100%);
   transition: transform 500ms ease;
   background: #313537;
   color: white;
@@ -14,7 +14,7 @@ menu {
   height: 10vh;
 }
 menu.show {
-  transform: translateY(-100%);
+  transform: translateY(0);
 }
 /* Menu styles here */
 
