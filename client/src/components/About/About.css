@@ -5,10 +5,11 @@
   align-items: center;
   margin: 0rem;
   background-color: transparent;
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 80vh;
+  padding-top: 3rem;
 }
 #About h1 {
-  padding-top: 3rem;
   text-align: center;
   color: white;
   font-size: 6rem;
