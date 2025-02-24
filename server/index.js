@@ -8,7 +8,7 @@ import eventsRouter from "./routes/eventRoutes.js";
 import cors from "cors";
 
 const app = express();
-app.use(cors({origin: "http://localhost:3000", credentials: true}));
+app.use(cors({origin: "http://gdgsheridan.com", credentials: true}));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(
