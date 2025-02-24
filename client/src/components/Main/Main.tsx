@@ -3,20 +3,10 @@ import homeanimation from "../../assets/GDSC23_IG_Sticker_01_v01.gif";
 import Socials from "../UI/Socials/Socials";
 import { Typewriter } from "react-simple-typewriter";
 import { handleScrollToComponent } from "../../utils/scrollUtils";
-import { useEffect } from "react";
+import useMainSlideAnimation from "../../hooks/useMainSlideAnimation";
 
 export default function Main() {
-  useEffect(() => {
-    const animateElements = document.querySelectorAll(".slideAnimate");
-    for (let i = 0; i < animateElements.length; i++) {
-      setTimeout(() => {
-        animateElements.item(i).classList.add("show");
-      }, i * 500);
-    }
-    setTimeout(() => {
-      document.querySelector("#title > h1 > span")?.classList.add("show");
-    }, 5000);
-  }, []);
+  useMainSlideAnimation();
   return (
     <main>
       <div id="main-content">
