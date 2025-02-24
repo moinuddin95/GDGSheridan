@@ -1,10 +1,8 @@
 import "./EventsForm.css";
 import useFormInput from "../../hooks/useFormInput";
-import { useNavigate } from "react-router-dom";
 import EventsFormProps from "../../interfaces/EventFormProps";
 
 function EventsForm({ displayName }: Readonly<EventsFormProps>) {
-  const navigate = useNavigate();
 
   const { handleChange, handleSubmit, keyThemes } = useFormInput(displayName);
 

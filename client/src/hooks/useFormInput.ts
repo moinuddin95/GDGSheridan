@@ -1,7 +1,5 @@
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import readFileAsDataURL from "../utils/readFileAsDataURL";
-import { json } from "stream/consumers";
 
 const useFormInput = (displayName: string) => {
   const navigate = useNavigate();
@@ -54,12 +52,14 @@ const useFormInput = (displayName: string) => {
       formInput.eventThemes.length - 1,
       1
     );
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
     setFormInput((prev) => ({
       ...prev,
       eventThemes: eventThemes,
     }));
     console.log("Submitting form:", formInput);
-    fetch("/api/events/submit", {
+    fetch(`${API_BASE_URL}events/submit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const useFormInput = (displayName: string) => {
           navigate("/error");
         }
       })
-      .catch((error) => navigate("/error"));
+      .catch((_error) => navigate("/error"));
   };
 
   return { handleChange, handleSubmit, keyThemes: formInput.eventThemes };

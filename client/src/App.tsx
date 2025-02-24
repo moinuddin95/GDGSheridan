@@ -9,7 +9,7 @@ import ActionResult from "./components/ActionResult/ActionResult";
 import EventDetails from "./components/EventDetails/EventsDetails";
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,13 +30,13 @@ function App() {
             <ActionResult message="Something went wrong :(" isSuccess={false} />
           }
         />
+        <Route path="/events/:id" element={<EventDetails />} />
         <Route
           path="/*"
           element={
             <ActionResult message="404 Path not found" isSuccess={false} />
           }
         />
-        <Route path="/events/:id" element={<EventDetails />} />
       </Routes>
       <Footer />
     </Router>

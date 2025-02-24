@@ -4,7 +4,7 @@ import axios from "axios";
 function Logout() {
   const handleLogout = (): boolean => {
     const fetchUser = async () => {
-      const response = axios
+      axios
         .post("/api/auth/logout")
         .then((res) => {
           if (res.status != 200) {

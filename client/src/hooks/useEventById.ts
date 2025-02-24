@@ -8,9 +8,10 @@ const useEventById = (id: string = "1") => {
   );
 
   useEffect(() => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const fetchEvent = async () => {
       try {
-        const response = await axios.get(`/api/events/${id}`);
+        const response = await axios.get(`${API_BASE_URL}/events/${id}`);
         if (response.status === 200) {
           console.log("response.data:", response.data);
           setEvent(response.data);

@@ -1,4 +1,3 @@
-import React from 'react';
 import "./ActionResult.css";
 import ActionResultProps from "../../interfaces/ActionResultProps";
 function ActionResult({ message, isSuccess }: Readonly<ActionResultProps>){

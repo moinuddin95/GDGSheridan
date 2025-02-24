@@ -7,7 +7,7 @@ const Footer = () => {
       <nav>
         <h3>&copy; 2024 All rights reserved</h3>
         <h3>Contact</h3>
-        <Socials />
+        <Socials className=""/>
       </nav>
     </footer>
   );
