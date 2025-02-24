@@ -30,7 +30,7 @@ main {
   text-align: left;
   width: 80%;
 }
-.scrollAnimate.show {
+.slideAnimate.show {
   animation: scrollAnimation 2s ease forwards;
 }
 
@@ -71,11 +71,11 @@ main {
   height: 10vh;
 }
 
-#main-animation > .scrollAnimate{
+#main-animation > .slideAnimate{
   transform: translateX(35vw);
 }
 
-#main-content .scrollAnimate{
+#main-content .slideAnimate{
   transform: translateX(-65vw);
 }
 @media (max-width: 1000px) {

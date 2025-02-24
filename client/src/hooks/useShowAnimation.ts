@@ -2,12 +2,12 @@ import { useEffect } from "react";
 
 function useShowAnimation(query: string, offset: number) {
   useEffect(() => {
-    const elem = document.querySelector(query);
+    const elem = document.querySelectorAll(query);
     const addShow = () => {
-      if (elem) {
-        const top = elem.getBoundingClientRect().top;
-        if (top < window.innerHeight - offset) elem.classList.add("show");
-        else if (elem.classList.contains("show")) elem.classList.remove("show");
+      for(let i = 0; i < elem.length; i++){
+          const top = elem.item(i).getBoundingClientRect().top;
+          if (top < window.innerHeight - offset) elem.item(i).classList.add("show");
+          else if (elem.item(i).classList.contains("show")) elem.item(i).classList.remove("show");
       }
     };
     window.addEventListener("scroll", addShow);

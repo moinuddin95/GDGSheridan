@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function Main() {
   useEffect(() => {
-    const animateElements = document.querySelectorAll(".scrollAnimate");
+    const animateElements = document.querySelectorAll(".slideAnimate");
     for (let i = 0; i < animateElements.length; i++) {
       setTimeout(() => {
         animateElements.item(i).classList.add("show");
@@ -21,7 +21,7 @@ export default function Main() {
     <main>
       <div id="main-content">
         <div id="title">
-          <h1 className="scrollAnimate">
+          <h1 className="slideAnimate">
             Google Developers Group:
             <Typewriter
               words={["Sheridan College"]}
@@ -34,13 +34,13 @@ export default function Main() {
             />
           </h1>
         </div>
-        <h3 className="scrollAnimate">
+        <h3 className="slideAnimate">
           Google Developer Group (GDG) is a Google Developers program for
           university students to learn web, mobile, and google technologies in a
           peer-to-peer learning environment.
         </h3>
         <button
-          className="scrollAnimate"
+          className="slideAnimate"
           onClick={() => handleScrollToComponent("Events")}
         >
           Check out our Events!
@@ -48,8 +48,8 @@ export default function Main() {
       </div>
 
       <div id="main-animation">
-        <img src={homeanimation} alt="animatoin" className="scrollAnimate"/>
-        <Socials className="scrollAnimate"/>
+        <img src={homeanimation} alt="animatoin" className="slideAnimate"/>
+        <Socials className="slideAnimate"/>
       </div>
     </main>
   );

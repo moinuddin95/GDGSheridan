@@ -8,12 +8,12 @@ import useShowAnimation from "../../hooks/useShowAnimation";
 
 function Events() {
   const { events } = useEvents();
-  useShowAnimation("#Events > h1", 100);
-  useShowAnimation("#Events > div", 150);
+  useShowAnimation("h1.scrollAnimation", 100);
+  useShowAnimation("div.scrollAnimation", 150);
   return events ? (
     <section id="Events">
-      <h1>Events</h1>
-      <div >
+      <h1 className="scrollAnimation">Events</h1>
+      <div className="scrollAnimation">
         {events.map((event) => {
           return (
             <Link

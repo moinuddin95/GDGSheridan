@@ -2,12 +2,11 @@ import "./About.css";
 import BookAnimation from "../UI/BookAnimation/BookAnimation";
 import useShowAnimation from "../../hooks/useShowAnimation";
 function About() {
-  useShowAnimation("#About > h1", 100);
-  useShowAnimation("#About > h3", 100);
+  useShowAnimation("#About > .scrollAnimation", 100);
   return (
     <section id="About">
-      <h1>About</h1>
-      <h3>
+      <h1 className="scrollAnimation">About</h1>
+      <h3 className="scrollAnimation">
         Through Google Developers Group Club, members will embark on an
         ever-evolving journey into the world of mobile and web development.
         Whether you are a beginner or an experienced developer, the GDG offers a
@@ -17,7 +16,7 @@ function About() {
         like-minded individuals, learn from industry professionals, and take
         part in hands-on coding initiatives.
       </h3>
-      <BookAnimation />
+      <BookAnimation/>
     </section>
   );
 }
