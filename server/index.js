@@ -23,13 +23,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/auth", authRouter);
+app.use("/api/auth", authRouter);
 
 app.get("/error", (req, res) => {
   res.status(500).send("Error occured");
 });
 
-app.use("/events", eventsRouter);
+app.use("/api/events", eventsRouter);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("\nListening on port 5000.\n");
