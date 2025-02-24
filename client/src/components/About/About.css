@@ -5,8 +5,7 @@
   align-items: center;
   margin: 0rem;
   background-color: transparent;
-  max-height: 100vh;
-  min-height: 80vh;
+  height: 100vh;
   padding-top: 3rem;
 }
 #About h1 {

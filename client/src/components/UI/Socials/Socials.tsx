@@ -3,10 +3,11 @@ import './Socials.css';
 import discord from "../../../assets/discord.png";
 import linkedin from "../../../assets/linkedin.png";
 import instagram from "../../../assets/instagram.png";
+import props from "../../../interfaces/ClassProp";
 
-function Socials() {
+function Socials({className}:Readonly<props>) {
   return (
-    <div className="socials">
+    <div className={`socials ${className}`}>
       <a href="https://www.linkedin.com/company/gdgsheridancollege">
         <img src={linkedin} alt="linkedin" />
       </a>

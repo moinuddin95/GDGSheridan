@@ -2,7 +2,6 @@ main {
   position: relative;
   padding: 8vw 5vw 0vw 10vw;
   background-color: transparent;
-  /* background-color: #50798b; */
   height: 100vh;
   display: flex;
   margin: 0px;
@@ -26,20 +25,39 @@ main {
 #main-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   color: white;
   text-align: left;
   width: 80%;
 }
-#main-content > h1 {
+.scrollAnimate.show {
+  animation: scrollAnimation 2s ease forwards;
+}
+
+#title{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width:fit-content;
+  height:30rem;
+  box-sizing: border-box;
+}
+#title > h1 {
   text-align: left;
   font-size: 6.5rem;
 }
-#main-content > h1 > span {
+#title > h1 > span{
   font-size: 6.5rem;
+  height: 6.5rem;
+  opacity: 0;
+  visibility: hidden;
+}
+#title > h1 > span.show{
+  opacity: initial;
+  visibility: initial;
 }
 #main-content > h3 {
-  font-size: 1.5vw;
+  font-size: 2.5rem;
 }
 #main-content > button {
   background-color: white;
@@ -51,6 +69,14 @@ main {
   font-size: 2.5rem;
   cursor: pointer;
   height: 10vh;
+}
+
+#main-animation > .scrollAnimate{
+  transform: translateX(35vw);
+}
+
+#main-content .scrollAnimate{
+  transform: translateX(-65vw);
 }
 @media (max-width: 1000px) {
   main {

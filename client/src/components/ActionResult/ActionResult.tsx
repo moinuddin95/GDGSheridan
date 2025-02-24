@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ActionResult.css";
 import ActionResultProps from "../../interfaces/ActionResultProps";
-const ActionResult: React.FC<ActionResultProps> = ({ message, isSuccess }) => {
+function ActionResult({ message, isSuccess }: Readonly<ActionResultProps>){
   return (
     <main className={`action-result ${isSuccess ? 'success' : 'error'}`}>
       <h1>{isSuccess ? 'Success' : 'Error'}</h1>

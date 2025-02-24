@@ -1,4 +1,4 @@
-interface EventsCardInterface {
+interface EventDetailsInterface {
   id: number;
   executiveName: string;
   eventName: string;
@@ -11,4 +11,4 @@ interface EventsCardInterface {
   eventThemes: string[];
 }
 
-export default EventsCardInterface;
+export default EventDetailsInterface;

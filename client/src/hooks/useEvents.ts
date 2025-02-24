@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import EventsCardInterface from "../interfaces/EventsCardInterface";
+import EventDetailsInterface from "../interfaces/EventsDetailsInterface";
 
 const useEvents = () => {
-  const [events, setEvents] = useState<EventsCardInterface[]>([]);
+  const [events, setEvents] = useState<EventDetailsInterface[]>([]);
   useEffect(() => {
     const fetchEvents = async () => {
       try {
