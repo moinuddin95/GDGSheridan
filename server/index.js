@@ -9,18 +9,11 @@ import cors from "cors";
 
 const app = express();
 app.use(
-  cors(
-    {
-      origin: "https://www.gdgsheridan.com",
-      methods: "GET,POST,PUT,DELETE",
-      credentials: true,
-    },
-    {
-      origin: "https://gdgsheridan.com",
-      methods: "GET,POST,PUT,DELETE",
-      credentials: true,
-    }
-  )
+  cors({
+    origin: ["https://www.gdgsheridan.com", "https://gdgsheridan.com"],
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
 );
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
