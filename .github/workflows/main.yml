@@ -69,7 +69,7 @@ jobs:
           node-version: latest
       
       - name: build the client
-        run: cd client && npm install && npm run build && 
+        run: cd client && npm install && npm run build
 
       - name: SSH and delete existing
         uses: appleboy/ssh-action@master
