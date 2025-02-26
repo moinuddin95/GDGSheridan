@@ -79,6 +79,9 @@ jobs:
           key: ${{env.key_rsa}}
           script: rm -rf ~/public_html/*
 
+      - name: Checking PWD
+        run: echo pwd; ls -la
+
       - name: copy the build to server
         uses: appleboy/scp-action@master
         with:
@@ -86,7 +89,7 @@ jobs:
           username: "prfutnmerlsl"
           key: ${{env.key_rsa}}
           source: "./dist/*"
-          destination: "/home/prfutnmerlsl/public_html/"
+          target: "/home/prfutnmerlsl/public_html/"
       
 
            
