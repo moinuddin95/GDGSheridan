@@ -1,0 +1,41 @@
+name: Deployment CI/CD
+
+on:
+  push:
+    branches:
+      -production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+      
+      - name: build the client
+        run: cd client && npm install && npm run build && 
+
+      - name: SSH and delete existing
+        uses: appleboy/ssh-actions@master
+        with:
+          host: ${{secrets.host}}
+          username: ${{secrets.username}}
+          key: ${{secrets.key_rsa}}
+          script: rm -rf ~/public_html/*
+
+      - name: copy the build to server
+        uses: appleboy/scp-actions@master
+        with:
+          host: ${{secrets.host}}
+          username: ${{secrets.username}}
+          key: ${{secrets.key_rsa}}
+          source: "./dist/*"
+          destination: "/home/prfutnmerlsl/public_html/"
+      
+
+           
