@@ -12,7 +12,7 @@ export default function Main() {
       <div id="main-content">
         <div id="title">
           <h1 className="slideAnimate">
-            Google Developers Group:
+            GDG:
             <Typewriter
               words={["Sheridan College"]}
               loop={false}
