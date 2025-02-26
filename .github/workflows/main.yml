@@ -82,7 +82,7 @@ jobs:
       - name: adding key
         run: |
           mkdir -p ~/.ssh/
-          echo "${{env.key_rsa}}" > /.ssh/id_rsa
+          echo "${{env.key_rsa}}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
       - name: copy the build to server
