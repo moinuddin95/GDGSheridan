@@ -3,7 +3,7 @@ name: Deployment CI/CD
 on:
   push:
     branches:
-      -production
+      - production
 
 jobs:
   build:
