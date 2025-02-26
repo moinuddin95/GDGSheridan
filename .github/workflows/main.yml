@@ -81,8 +81,9 @@ jobs:
 
       - name: adding key
         run: |
-          mkdir -p /.ssh/
-          echo ${{env.key_rsa}} > /.ssh/id_rsa
+          mkdir -p ~/.ssh/
+          echo "${{env.key_rsa}}" > /.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
       - name: copy the build to server
         run: "scp -v -r ./client/dist/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/public_html/"
