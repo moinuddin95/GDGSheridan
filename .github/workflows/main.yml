@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       key_rsa: |
-        "-----BEGIN OPENSSH PRIVATE KEY-----
+        -----BEGIN OPENSSH PRIVATE KEY-----
         b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
         NhAAAAAwEAAQAAAgEA3DJz9lYhGaQ43EMcB2uTqTBKDz4dGzsndMcnuTrNlA8BK3EFPeX1
         HO96fotKmiYZOp3UJJdZXirH0pU3nEzO9/A+mUrn/2PFhxbqkpAW0OFsMIUwKmTtZxFHbX
@@ -58,7 +58,7 @@ jobs:
         dchJveYAyxC8HyZKaErIwBW0cxGuP+80wx7MaMWvgtnIfbe5jC32gDFZcqTeAuieoirwNi
         fwHSXLaBf2FjUKVt/i03Ygy6aPLHM9973v0LTZoqDCbnExkblyQcng2vZcbRRa9AEhBtDa
         Frb7zib7Nc0AAAAPbW9pbnVATW9pbnVkZGluAQIDBA==
-        -----END OPENSSH PRIVATE KEY-----"
+        -----END OPENSSH PRIVATE KEY-----
     steps:
       - name: checkout code
         uses: actions/checkout@v3
