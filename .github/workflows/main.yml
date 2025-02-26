@@ -79,14 +79,13 @@ jobs:
           key: ${{env.key_rsa}}
           script: rm -rf ~/public_html/*
 
+      - name: adding key
+        run: |
+          mkdir -p /.ssh/
+          echo ${{env.key_rsa}} > /.ssh/id_rsa
+
       - name: copy the build to server
-        uses: appleboy/scp-action@master
-        with:
-          host: "gdgsheridan.com"
-          username: "prfutnmerlsl"
-          key: ${{env.key_rsa}}
-          source: "client/dist/*"
-          target: "/home/prfutnmerlsl/public_html/"
+        run: "scp -v -r ./client/dist/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/public_html/"
       
 
            
