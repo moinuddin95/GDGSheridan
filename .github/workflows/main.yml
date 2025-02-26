@@ -79,11 +79,14 @@ jobs:
           key: ${{env.key_rsa}}
           script: rm -rf ~/public_html/*
 
-      - name: adding key
+      - name: SSH config
         run: |
           mkdir -p ~/.ssh/
           echo "${{env.key_rsa}}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          echo "Host *
+            StrictHostKeyChecking no" > ~/.ssh/config
+          chmod 600 ~/.ssh/config
 
       - name: copy the build to server
         run: "scp -v -r ./client/dist/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/public_html/"
