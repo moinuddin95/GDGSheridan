@@ -80,8 +80,16 @@ jobs:
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 600 ~/.ssh/config
 
-      - name: copy the build to server
+      - name: copy the frontend build to server
         run: "scp -v -r ./client/dist/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/public_html/"
       
-
-           
+      - name: copy the backend to server
+        run: "scp -v -r ./server/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/www/backend"
+        
+      - name: backend config
+        run: |
+          ssh -v prfutnmerlsl@gdgsheridan.com
+          nvm install stable
+          cd ~/www/backend
+          npm install
+          pm2 restart backend
