@@ -89,7 +89,7 @@ jobs:
       - name: backend config
         run: |
           ssh -v prfutnmerlsl@gdgsheridan.com
-          nvm install stable
+          nvm install stable || curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash  && nvm install stable
           cd ~/www/backend
           npm install
           pm2 restart backend
