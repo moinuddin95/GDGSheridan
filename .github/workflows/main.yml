@@ -88,11 +88,12 @@ jobs:
         
       - name: backend config
         run: |
-          ssh -v prfutnmerlsl@gdgsheridan.com
+          ssh -v prfutnmerlsl@gdgsheridan.com << 'EOF'
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
           [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
           nvm install stable
-          cd ~/www/backend
+          cd /home/prfutnmerlsl/www/backend
           npm install
           pm2 restart backend
+          EOF
