@@ -71,14 +71,6 @@ jobs:
       - name: build the client
         run: cd client && npm install && npm run build
 
-      - name: SSH and delete existing
-        uses: appleboy/ssh-action@master
-        with:
-          host: "gdgsheridan.com"
-          username: "prfutnmerlsl"
-          key: ${{env.key_rsa}}
-          script: rm -rf ~/public_html/*
-
       - name: SSH config
         run: |
           mkdir -p ~/.ssh/
