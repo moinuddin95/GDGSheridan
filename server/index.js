@@ -10,7 +10,7 @@ import cors from "cors";
 const app = express();
 app.use(
   cors({
-    origin: ["https://www.gdgsheridan.com", "https://gdgsheridan.com"],
+    origin: ["https://www.gdgsheridan.com", "https://gdgsheridan.com", "http://localhost:3000"],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
