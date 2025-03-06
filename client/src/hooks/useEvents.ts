@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import EventDetailsInterface from "../interfaces/EventsDetailsInterface";
+import EventListItem from "../interfaces/EventListItem";
 
 const useEvents = () => {
-  const [events, setEvents] = useState<EventDetailsInterface[]>([]);
+  const [events, setEvents] = useState<EventListItem[]>([]);
   useEffect(() => {
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const fetchEvents = async () => {
