@@ -64,7 +64,7 @@ const submitEvent = (req, res) => {
       event_themes
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
-      req.body.url || "http://gdgsheridan.com",
+      req.body.url,
       req.body.executiveName,
       req.body.eventName,
       req.body.eventDateFrom,

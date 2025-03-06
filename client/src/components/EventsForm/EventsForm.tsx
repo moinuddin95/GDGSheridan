@@ -20,6 +20,16 @@ function EventsForm({ displayName }: Readonly<EventsFormProps>) {
             onChange={handleChange}
           />
         </div>
+        <div>
+          <label htmlFor="event-name">Event RSVP link:</label>
+          <input
+            type="text"
+            id="event-name"
+            name="url"
+            placeholder="gdgsheridan.com/rsvp"
+            onChange={handleChange}
+          />
+        </div>
         <div className="datetime">
           <div>
             <label htmlFor="event-date-from">From</label>
