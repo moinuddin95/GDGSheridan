@@ -15,6 +15,7 @@ function Events() {
       <h1 className="scrollAnimation">Events</h1>
       <div className="scrollAnimation">
         {events.map((event) => {
+          console.log(event);
           return (
             <Link
               to={`/events/${event.id}`}

@@ -5,7 +5,8 @@ let eventsCount = 10;
 
 const getEvents = (req, res) => {
   mysql.query(
-    `select id , event_name "eventName", event_date_from "eventDateFrom", event_date_to "eventDateTo" from events;`,
+    `select id , event_name "eventName", DATE_FORMAT(event_date_from, '%Y-%m-%d') AS eventDateFrom,
+  DATE_FORMAT(event_date_to, '%Y-%m-%d') AS eventDateTo from events;`,
     (err, results) => {
       if (err) {
         res.status(500).send(err);
@@ -24,8 +25,8 @@ const getEventById = (req, res) => {
       url,
       executive_name "executiveName",
       event_name "eventName",
-      event_date_from "eventDateFrom",
-      event_date_to "eventDateTo",
+      DATE_FORMAT(event_date_from, '%Y-%m-%d') AS eventDateFrom,
+      DATE_FORMAT(event_date_to, '%Y-%m-%d') AS eventDateTo,
       event_time_from "eventTimeFrom",
       event_time_to "eventTimeTo",
       event_location "eventLocation",
