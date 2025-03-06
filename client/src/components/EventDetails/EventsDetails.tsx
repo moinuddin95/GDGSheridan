@@ -27,7 +27,7 @@ function EventsDetails() {
       )}
       <h2>Key Themes</h2>
       <ul>
-        {event?.eventThemes.map((theme) => (
+        {event?.eventThemes.split(',').map((theme) => (
           <li key={theme}>{theme}</li>
         ))}
       </ul>

@@ -6,7 +6,6 @@ import passport from "passport";
 import "./configs/passportConfig.js";
 import eventsRouter from "./routes/eventRoutes.js";
 import cors from "cors";
-import mysql from "./model/sqlconfig.js";
 
 const app = express();
 app.use(

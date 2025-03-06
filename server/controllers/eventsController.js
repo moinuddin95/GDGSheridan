@@ -1,10 +1,16 @@
 import fs from "fs";
+import mysql from "../model/sqlconfig.js";
 
 let eventsCount = 10;
 
 const getEvents = (req, res) => {
-  let data = fs.readFileSync("./model/Events.json", { encoding: "utf-8" });
-  res.json(JSON.parse(data));
+  mysql.query(`select * from events;`, (err, results) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.json(results);
+    }
+  });
 };
 
 const getEventById = (req, res) => {

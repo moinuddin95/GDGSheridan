@@ -8,7 +8,7 @@ interface EventDetailsInterface {
   eventTimeTo: string;
   eventLocation: string;
   eventDescription: string;
-  eventThemes: string[];
+  eventThemes: string;
 }
 
 export default EventDetailsInterface;
