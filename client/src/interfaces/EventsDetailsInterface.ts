@@ -1,5 +1,7 @@
 interface EventDetailsInterface {
-  id: number;
+  id?: number;
+  //TODO: Add url logic
+  url?: string;
   executiveName: string;
   eventName: string;
   eventDateFrom: string;
@@ -8,7 +10,7 @@ interface EventDetailsInterface {
   eventTimeTo: string;
   eventLocation: string;
   eventDescription: string;
-  eventThemes: string;
+  eventThemes: string[];
 }
 
 export default EventDetailsInterface;

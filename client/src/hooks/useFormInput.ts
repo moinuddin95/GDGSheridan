@@ -1,10 +1,11 @@
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import EventDetailsInterface from "../interfaces/EventsDetailsInterface";
 
 const useFormInput = (displayName: string) => {
   const navigate = useNavigate();
 
-  const [formInput, setFormInput] = useState({
+  const [formInput, setFormInput] = useState<EventDetailsInterface>({
     eventName: "",
     eventDateFrom: "",
     eventDateTo: "",
@@ -13,6 +14,7 @@ const useFormInput = (displayName: string) => {
     eventLocation: "",
     eventDescription: "",
     eventThemes: [""],
+    executiveName: "",
   });
 
   const handleChange = async (
@@ -21,7 +23,7 @@ const useFormInput = (displayName: string) => {
   ) => {
     let { name, value } = e.target;
     if (name === "eventThemes" && index !== undefined) {
-      let updatedThemes = formInput.eventThemes;
+      let updatedThemes= formInput.eventThemes as string[];
       updatedThemes[index] = value;
       const lastIndex = updatedThemes.length - 1;
       if (index === lastIndex) {
@@ -48,18 +50,14 @@ const useFormInput = (displayName: string) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const eventThemes = formInput.eventThemes.splice(
+    const eventThemes = (formInput.eventThemes as string[]).splice(
       formInput.eventThemes.length - 1,
       1
-    );
+    ).join(', ');
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-    setFormInput((prev) => ({
-      ...prev,
-      eventThemes: eventThemes,
-    }));
-    console.log("Submitting form:", formInput);
-    fetch(`${API_BASE_URL}events/submit`, {
+    console.log("Submitting form:", {...formInput, eventThemes});
+    fetch(`${API_BASE_URL}/events/submit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +74,7 @@ const useFormInput = (displayName: string) => {
       .catch((_error) => navigate("/error"));
   };
 
-  return { handleChange, handleSubmit, keyThemes: formInput.eventThemes };
+  return { handleChange, handleSubmit, keyThemes: formInput.eventThemes as string[]};
 };
 
 export default useFormInput;

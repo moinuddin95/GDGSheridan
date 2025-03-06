@@ -5,7 +5,7 @@ let eventsCount = 10;
 
 const getEvents = (req, res) => {
   mysql.query(
-    `select id, event_name, event_date_from, event_date_to from events;`,
+    `select id , event_name "eventName", event_date_from "eventDateFrom", event_date_to "eventDateTo" from events;`,
     (err, results) => {
       if (err) {
         res.status(500).send(err);
@@ -20,58 +20,70 @@ const getEventById = (req, res) => {
   let id = parseInt(req.params.id);
   let event = mysql.query(
     `SELECT 
-    e.id,
-    e.url,
-    e.executive_name,
-    e.event_name,
-    e.event_date_from,
-    e.event_date_to,
-    e.event_time_from,
-    e.event_time_to,
-    e.event_location,
-    e.event_description,
-    GROUP_CONCAT(t.theme_name SEPARATOR ', ') AS event_themes
-FROM 
-    events e
-LEFT JOIN 
-    event_theme_mapping etm ON e.id = etm.event_id
-LEFT JOIN 
-    themes t ON etm.theme_id = t.id
-WHERE 
-    e.id = ?  -- Replace ? with the specific event ID
-GROUP BY 
-    e.id;
-`,
-    (res, err) => {
-      if (error) console.error("Couldn't fetch event\n error:", err);
-      else console.log("event fetched");
+      id,
+      url,
+      executive_name "executiveName",
+      event_name "eventName",
+      event_date_from "eventDateFrom",
+      event_date_to "eventDateTo",
+      event_time_from "eventTimeFrom",
+      event_time_to "eventTimeTo",
+      event_location "eventLocation",
+      event_description "eventDescription",
+      event_themes "eventThemes"
+    FROM 
+      events
+    WHERE
+      id=?;`,
+    [id],
+    (err, result) => {
+      if (err) res.status(500).send("Couldn't fetch event.");
+      if (result.length === 0) res.status(404).send("Event not found");
+      let event = result[0];
+      const themes = event.eventThemes.split(',');
+      event = {...event, eventThemes:themes};
+      res.status(200).json(event);
     }
   );
-  if (event === undefined) {
-    res.status(404).send("Event not found");
-  }
-  res.status(200).json(event);
 };
 
 const submitEvent = (req, res) => {
-  const Event = {
-    id: ++eventsCount,
-    executiveName: req.body.executiveName,
-    eventName: req.body.eventName,
-    eventDateFrom: req.body.eventDateFrom,
-    eventDateTo: req.body.eventDateTo,
-    eventTimeFrom: req.body.eventTimeFrom,
-    eventTimeTo: req.body.eventTimeTo,
-    eventLocation: req.body.eventLocation,
-    eventDescription: req.body.eventDescription,
-    eventThemes: req.body.eventThemes,
-  };
-  let events = JSON.parse(
-    fs.readFileSync("./model/Events.json", { encoding: "utf-8" })
+  const themes = req.body.eventThemes.join(',');
+  mysql.query(
+    `INSERT INTO events (
+      url, 
+      executive_name, 
+      event_name, 
+      event_date_from, 
+      event_date_to, 
+      event_time_from, 
+      event_time_to, 
+      event_location, 
+      event_description, 
+      event_themes
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      req.body.url || "http://gdgsheridan.com",
+      req.body.executiveName,
+      req.body.eventName,
+      req.body.eventDateFrom,
+      req.body.eventDateTo,
+      req.body.eventTimeFrom,
+      req.body.eventTimeTo,
+      req.body.eventLocation,
+      req.body.eventDescription,
+      themes
+    ],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error submitting event");
+      } else {
+        console.log("Event submitted");
+        res.status(201).send("Event added successfully");
+      }
+    }
   );
-  events.push(Event);
-  fs.writeFileSync("./model/Events.json", JSON.stringify(events, null, 2));
-  res.status(201).send("Event added successfully");
 };
 
 export { getEvents, submitEvent, getEventById };

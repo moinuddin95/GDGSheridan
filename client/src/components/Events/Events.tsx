@@ -18,7 +18,7 @@ function Events() {
           return (
             <Link
               to={`/events/${event.id}`}
-              key={event.eventName}
+              key={event.id}
               style={{ backgroundImage: `url(${events.indexOf(event) % 2 === 0 ? eventCardBlue : eventCardYellow})` }}
             >
               <div className="eventCard">

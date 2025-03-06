@@ -84,7 +84,7 @@ function EventsForm({ displayName }: Readonly<EventsFormProps>) {
 
         <h2>Key Themes</h2>
         <div className="event-themes">
-          {Array.isArray(keyThemes) && keyThemes.map((_, index) => (
+          {keyThemes.map((_, index) => (
             <div key={`theme-${index}`}>
               <label htmlFor={`event-theme-${index}`}></label>
               <input
