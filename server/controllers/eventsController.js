@@ -20,7 +20,7 @@ const getEventById = (req, res) => {
   let event = mysql.query(
     `SELECT 
       id,
-      url,
+      event_url,
       executive_name "executiveName",
       event_name "eventName",
       DATE_FORMAT(event_date_from, '%Y-%m-%d') AS eventDateFrom,

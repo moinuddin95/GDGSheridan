@@ -4,7 +4,7 @@ import EventsFormProps from "../../interfaces/EventFormProps";
 
 function EventsForm({ displayName }: Readonly<EventsFormProps>) {
 
-  const { handleChange, handleSubmit, keyThemes } = useFormInput(displayName);
+  const { handleChange, handleThemesChange, handleSubmit, keyThemes } = useFormInput(displayName);
 
   return (
     <div className="EventsForm">
@@ -101,7 +101,7 @@ function EventsForm({ displayName }: Readonly<EventsFormProps>) {
                 type="text"
                 id={`event-theme-${index}`}
                 name={"eventThemes"}
-                onChange={(e) => {handleChange(e, index)}}
+                onChange={(e) => {handleThemesChange(e, index)}}
                 value={keyThemes[index]}
               />
             </div>
