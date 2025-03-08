@@ -1,17 +1,13 @@
-import { createConnection } from "mysql2";
+import { createPool } from "mysql2";
 
-const db = createConnection({
+const db = createPool({
   host: "gdgsheridan.com",
   user: "moin",
   password: process.env.SQL_PASSWORD,
   database: "GDGSheridanDb",
-});
-
-db.connect((err) => {
-  if (err) {
-    console.error("Could'nt connect to SQL server \n Error: " + err);
-  }
-  console.log("sql connected");
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
 
 export default db;

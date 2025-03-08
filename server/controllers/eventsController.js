@@ -1,8 +1,6 @@
 import fs from "fs";
 import mysql from "../model/sqlconfig.js";
 
-let eventsCount = 10;
-
 const getEvents = (req, res) => {
   mysql.query(
     `select id , event_name "eventName", DATE_FORMAT(event_date_from, '%Y-%m-%d') AS eventDateFrom,
