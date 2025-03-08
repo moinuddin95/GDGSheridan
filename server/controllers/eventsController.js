@@ -7,7 +7,7 @@ const getEvents = (req, res) => {
   DATE_FORMAT(event_date_to, '%Y-%m-%d') AS eventDateTo from events;`,
     (err, results) => {
       if (err) {
-        res.status(500).send(err);
+        return res.status(500).send(err);
       } else {
         res.json(results);
       }
@@ -20,7 +20,7 @@ const getEventById = (req, res) => {
   let event = mysql.query(
     `SELECT 
       id,
-      event_url,
+      event_url "eventURL",
       executive_name "executiveName",
       event_name "eventName",
       DATE_FORMAT(event_date_from, '%Y-%m-%d') AS eventDateFrom,
@@ -36,8 +36,8 @@ const getEventById = (req, res) => {
       id=?;`,
     [id],
     (err, result) => {
-      if (err) res.status(500).send("Couldn't fetch event.");
-      if (result.length === 0) res.status(404).send("Event not found");
+      if (err) return res.status(500).send("Couldn't fetch event.");
+      if (result.length === 0) return res.status(404).send("Event not found");
       let event = result[0];
       const themes = event.eventThemes.split(',');
       event = {...event, eventThemes:themes};
@@ -75,7 +75,7 @@ const submitEvent = (req, res) => {
     (err, result) => {
       if (err) {
         console.error(err);
-        res.status(500).send("Error submitting event");
+        return res.status(500).send("Error submitting event");
       } else {
         console.log("Event submitted");
         res.status(201).send("Event added successfully");

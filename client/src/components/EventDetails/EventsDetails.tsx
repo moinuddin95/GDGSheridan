@@ -31,7 +31,7 @@ function EventsDetails() {
           <li key={theme}>{theme}</li>
         ))}
       </ul>
-      <button>RSVP</button>
+      <a href={event?.eventURL}><button>RSVP</button></a>
     </div>
   ) : (
     <Loading />
