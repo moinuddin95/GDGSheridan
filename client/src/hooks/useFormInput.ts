@@ -7,6 +7,7 @@ const useFormInput = (displayName: string) => {
 
   const [formInput, setFormInput] = useState<EventDetailsInterface>({
     eventName: "",
+    eventURL: "",
     eventDateFrom: "",
     eventDateTo: "",
     eventTimeFrom: "",
@@ -23,7 +24,7 @@ const useFormInput = (displayName: string) => {
   ) => {
     let { name, value } = e.target;
     if (name === "eventThemes" && index !== undefined) {
-      let updatedThemes= formInput.eventThemes as string[];
+      let updatedThemes= formInput.eventThemes;
       updatedThemes[index] = value;
       const lastIndex = updatedThemes.length - 1;
       if (index === lastIndex) {
@@ -50,19 +51,19 @@ const useFormInput = (displayName: string) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const eventThemes = (formInput.eventThemes as string[]).splice(
+    const eventThemes = formInput.eventThemes.splice(
       formInput.eventThemes.length - 1,
       1
-    ).join(', ');
+    );
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-    console.log("Submitting form:", {...formInput, eventThemes});
+    console.log("Submitting form:", {...formInput, eventThemes, executiveName: displayName});
     fetch(`${API_BASE_URL}/events/submit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...formInput, executiveName: displayName }),
+      body: JSON.stringify({ ...formInput, eventThemes, executiveName: displayName }),
     })
       .then((res) => {
         if (res.status === 201) {
@@ -74,7 +75,7 @@ const useFormInput = (displayName: string) => {
       .catch((_error) => navigate("/error"));
   };
 
-  return { handleChange, handleSubmit, keyThemes: formInput.eventThemes as string[]};
+  return { handleChange, handleSubmit, keyThemes: formInput.eventThemes};
 };
 
 export default useFormInput;

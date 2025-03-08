@@ -24,8 +24,8 @@ function EventsForm({ displayName }: Readonly<EventsFormProps>) {
           <label htmlFor="event-name">Event RSVP link:</label>
           <input
             type="text"
-            id="event-name"
-            name="url"
+            id="event-url"
+            name="eventURL"
             placeholder="gdgsheridan.com/rsvp"
             onChange={handleChange}
           />

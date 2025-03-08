@@ -49,10 +49,9 @@ const getEventById = (req, res) => {
 };
 
 const submitEvent = (req, res) => {
-  const themes = req.body.eventThemes.join(',');
   mysql.query(
     `INSERT INTO events (
-      url, 
+      event_url, 
       executive_name, 
       event_name, 
       event_date_from, 
@@ -64,7 +63,7 @@ const submitEvent = (req, res) => {
       event_themes
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
-      req.body.url,
+      req.body.eventURL,
       req.body.executiveName,
       req.body.eventName,
       req.body.eventDateFrom,
@@ -73,7 +72,7 @@ const submitEvent = (req, res) => {
       req.body.eventTimeTo,
       req.body.eventLocation,
       req.body.eventDescription,
-      themes
+      req.body.eventThemes.join(',')
     ],
     (err, result) => {
       if (err) {
