@@ -1,6 +1,6 @@
 import "./EventsForm.css";
 import useFormInput from "../../hooks/useFormInput";
-import EventsFormProps from "../../interfaces/EventFormProps";
+import EventsFormProps from "../../interfaces/Props/EventFormProps";
 
 function EventsForm({ displayName }: Readonly<EventsFormProps>) {
 

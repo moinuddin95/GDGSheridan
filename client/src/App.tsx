@@ -3,14 +3,12 @@ import Home from "./pages/Home/Home";
 import "./App.css";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Logout from "./pages/Logout";
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ActionResult from "./components/ActionResult/ActionResult";
 import EventDetails from "./components/EventDetails/EventsDetails";
 function App() {
   return (
     <Router basename="/">
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
