@@ -8,57 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      key_rsa: |
-        -----BEGIN OPENSSH PRIVATE KEY-----
-        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
-        -----END OPENSSH PRIVATE KEY-----
     steps:
       - name: checkout code
         uses: actions/checkout@v3
@@ -74,26 +23,26 @@ jobs:
       - name: SSH config
         run: |
           mkdir -p ~/.ssh/
-          echo "${{env.key_rsa}}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           echo "Host *
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 600 ~/.ssh/config
 
       - name: copy the frontend build to server
-        run: "scp -v -r ./client/dist/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/public_html/"
+        run: "scp -v -r ./client/dist/* ${{ secrets.SSH_USERNAME }}@gdgsheridan.com:/home/${{ secrets.SSH_USERNAME }}/public_html/"
       
       - name: copy the backend to server
-        run: "scp -v -r ./server/* prfutnmerlsl@gdgsheridan.com:/home/prfutnmerlsl/www/backend"
+        run: "scp -v -r ./server/* ${{ secrets.SSH_USERNAME }}@gdgsheridan.com:/home/${{ secrets.SSH_USERNAME }}/www/backend"
         
       - name: backend config
         run: |
-          ssh -v prfutnmerlsl@gdgsheridan.com << 'EOF'
+          ssh -v ${{ secrets.SSH_USERNAME }}@gdgsheridan.com << 'EOF'
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
           [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
           nvm install stable
-          cd /home/prfutnmerlsl/www/backend
+          cd /home/${{ secrets.SSH_USERNAME }}/www/backend
           npm install
           pm2 restart backend
           EOF
